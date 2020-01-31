@@ -3,11 +3,35 @@
 This is my (as of 2020) project setup for a website with a separate frontend
 repository.
 
-## Setup
+## Directory Setup
+
+The `src` folder is structured basically to have a folder for each filetype:
+
+```text
+src
+ ├── js
+ ├── kit
+ ├── less
+ ├ - - - - - - - -
+ ├── assets
+ ├── previewmedia
+ ├ - - - - - - - -
+ ├── components
+ ├── panels
+ └── layouts
+```
+
+### js, kit & less
+
+These are regular source files (JavaScript, HTML & CSS) that compile into the
+`build/assets` folder, side by side.
+
+
+## Build Setup
 
 ### CodeKit (macOS)
 
-CodeKit should pick up all settings from the `config.codekit3` 
+CodeKit should pick up all settings from the `config.codekit3`.
 
 
 ### Prepros (Windows/Linux)
