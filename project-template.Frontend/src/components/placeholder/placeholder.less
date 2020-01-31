@@ -1,0 +1,19 @@
+.placeholder {
+	box-sizing: border-box;
+	background: var(--bg-color, rgba(0, 100, 200, 0.3));
+	min-height: 5em;
+	
+	border: 2px dashed rgba(0, 0, 0, 0.7);
+	display: flex;
+	padding: 10px;
+	
+	h3 {
+		margin: auto;
+		font-size: 1em;
+		font-weight: normal;
+		text-align: center;
+		
+		&::before { content: "[ "; }
+		&::after { content: " ]"; }
+	}
+}

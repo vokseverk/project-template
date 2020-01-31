@@ -1,0 +1,31 @@
+.font-size(@size) {
+	font-size: (@size * 1px);
+	font-size: ((@size / 10) * 1rem);
+}
+
+.font-size(@size, @line_height) {
+	.font-size(@size);
+	line-height: (@line_height / @size);
+}
+
+.visuallyHidden() {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
+
+.centered() {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.centered(@width) {
+	.centered();
+	max-width: @width;
+}
