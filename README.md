@@ -33,8 +33,18 @@ These hold images, icons & maybe webfonts for use in the site; they should get
 copied to the build folder (in `build/assets` and `build/previewmedia`
 respectively).
 
-Files in `assets` are for icons, images & fonts, while `previewmedia` is meant for
-images that would ideally come from a CMS or similar.
+Files in `assets` are for icons, images & fonts, while `previewmedia` is meant
+for images that would ideally come from a CMS or similar.
+
+### components, panels & layouts
+
+The `components` folder should contain individual components of the site, like
+buttons, cards etc.
+
+Larger elements that wraps a couple (or a list) of elements gets to go into the
+`panels` folder.
+
+Full page layouts go into the `layouts` folder.
 
 ## Build Setup
 
