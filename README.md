@@ -1,6 +1,6 @@
 # Project Template 2020
 
-This is my (as of 2020) project setup for a website with a separate frontend
+This is our (as of 2020) project setup for a website with a separate frontend
 repository.
 
 ## Directory Setup
