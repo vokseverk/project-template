@@ -27,6 +27,15 @@ These are regular source files (JavaScript, HTML & CSS) that compile into the
 `build/assets` folder, side by side.
 
 
+### assets & previewmedia
+
+These hold images, icons & maybe webfonts for use in the site; they should get
+copied to the build folder (in `build/assets` and `build/previewmedia`
+respectively).
+
+Files in `assets` are for icons, images & fonts, while `previewmedia` is meant for
+images that would ideally come from a CMS or similar.
+
 ## Build Setup
 
 ### CodeKit (macOS)
@@ -40,6 +49,8 @@ If you're on Windows you should be able to use the [Prepros][PRE] app for
 compiling the assets. A `.config` file is already present, which should set
 everything up for you, almost as if you were using CodeKit on a Mac.
 
+To use it, add the `{project-template}.Frontend` folder as a project in Prepros.
+
 You cannot, however, use the *Live Preview* function, as it doesn't (yet?) have
 the ability to set the "root" folder for the site, and you'll need that since
 you're building everything into the `build` folder.
@@ -51,11 +62,11 @@ If you're using Visual Studio Code as your editor, you can use the
 
 ```json
 {
-	"liveServer.settings.root": "project-template.Frontend/build"
+	"liveServer.settings.root": "{project-template}.Frontend/build"
 }
 ```
 
-**Note:** `project-template` should be replaced with the actual project/folder
+**Note:** `{project-template}` should be replaced with the actual project/folder
 name.
 
 
