@@ -20,9 +20,7 @@ h4,
 p,
 ul[class],
 ol[class],
-li,
 figure,
-figcaption,
 blockquote,
 dl,
 dd {
@@ -48,9 +46,15 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
+/* A elements that do have a class should inherit the color style */
+a[class] {
+  color: inherit;
+}
+
 /* Make images easier to work with */
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
