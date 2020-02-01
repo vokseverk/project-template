@@ -68,6 +68,16 @@
   display: list-item;
   font-family: monospace;
 }
+.components-nav {
+  display: flex;
+  justify-content: center;
+	align-items: baseline;
+	margin: 1em auto;
+}
+.components-nav > * {
+	padding: 0.5em 1em;
+	min-width: 10ch;
+}
 .component {
   position: relative;
   margin-top: 3em;
