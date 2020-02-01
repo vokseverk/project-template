@@ -119,6 +119,14 @@
 		"oAP": "/build/dashboard.html",
 		"oF": 0
 		},
+	"/src/kit/index.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/index.html",
+		"oF": 0
+		},
 	"/src/kit/panels.kit": {
 		"cB": 0,
 		"ft": 2048,
