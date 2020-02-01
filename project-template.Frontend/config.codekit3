@@ -317,7 +317,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "/build/vendor/componentize/componentize.css",
+		"oAP": "/build/assets/componentize.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -338,7 +338,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/build/vendor/modern-css-reset/reset.css",
+		"oAP": "/build/assets/reset.css",
 		"oF": 0,
 		"oS": 0
 		}
@@ -352,7 +352,8 @@
 	"displayValue": "project-template.Frontend",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-red",
-	"iconImageWasSetByUser": 0
+	"iconImageWasSetByUser": 0,
+	"lastBuiltDate": 602263088.070086
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -2198,10 +2199,10 @@
 	"languageDefaultsCSS": {
 		"autoOutputAction": 2,
 		"autoOutputPathFilenamePattern": "*.css",
-		"autoOutputPathRelativePath": "",
+		"autoOutputPathRelativePath": "assets",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0,
+		"autoOutputPathStyle": 1,
 		"createSourceMap": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
