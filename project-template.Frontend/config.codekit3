@@ -87,7 +87,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/build/assets/app.min.js",
+		"oAP": "/build/assets/app.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -98,7 +98,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/build/assets/libs.min.js",
+		"oAP": "/build/assets/libs.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -319,7 +319,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/build/assets/componentize.min.js",
+		"oAP": "/build/assets/componentize.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -2235,14 +2235,14 @@
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.min.js",
+		"autoOutputPathFilenamePattern": "*.js",
 		"autoOutputPathRelativePath": "assets",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 1,
 		"bundleFormat": 0,
 		"createSourceMap": 0,
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"syntaxCheckerStyle": 0,
 		"transpilerStyle": 0
 		},
