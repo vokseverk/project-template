@@ -5,13 +5,14 @@ repository.
 
 ## Directory Setup
 
-The `src` folder is structured basically to have a folder for each filetype:
+The `src` folder is structured like this:
 
 ```text
 src
  ├── js
- ├── kit
  ├── less
+ ├ - - - - - - - -
+ ├── kit
  ├ - - - - - - - -
  ├── assets
  ├── previewmedia
@@ -21,10 +22,22 @@ src
  └── layouts
 ```
 
-### js, kit & less
+### js & less
 
-These are regular source files (JavaScript, HTML & CSS) that compile into the
-`build/assets` folder, side by side.
+These are regular source files that compile into the
+`build/assets` folder as `.js` & `.css` files, side by side.
+
+### kit
+
+The files in here are [Kit files][KIT] which compile to regular HTML files in
+the `build` folder, maintaining their file structure, e.g.:
+
+
+| Source file                   |  Build file                  |
+|-------------------------------|------------------------------|
+| src/kit/**index**.kit         | build/**index**.html         |
+| src/kit/about/**index**.kit   | build/about/**index**.html   |
+| src/kit/projects/**free**.kit | build/projects/**free**.html |
 
 
 ### assets & previewmedia
@@ -50,7 +63,7 @@ Full page layouts go into the `layouts` folder.
 
 ### CodeKit (macOS)
 
-CodeKit should pick up all settings from the `config.codekit3`.
+[CodeKit][CK] should pick up all settings from the `config.codekit3` file.
 
 
 ### Prepros (Windows/Linux)
@@ -80,9 +93,6 @@ If you're using Visual Studio Code as your editor, you can use the
 name.
 
 
-
-
-
-
-
+[KIT]: https://codekitapp.com/help/kit/
+[CK]:  https://codekitapp.com/
 [PRE]: https://prepros.io/
