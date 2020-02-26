@@ -2270,7 +2270,7 @@
 		"autoOutputPathFilenamePattern": "*.html",
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "kit",
-		"autoOutputPathReplace2": "html",
+		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 1,
 		"shouldRunCacheBuster": 0,
 		"shouldRunHTMLMinifier": 0
