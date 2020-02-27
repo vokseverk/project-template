@@ -2417,6 +2417,17 @@
 		},
 	"languageDefaultsUserDefined": [
 		{
+			"autoOutputAction": 2,
+			"autoOutputPathFilenamePattern": "*.cshtml",
+			"autoOutputPathRelativePath": "Views",
+			"autoOutputPathReplace1": "",
+			"autoOutputPathReplace2": "",
+			"autoOutputPathStyle": 1,
+			"fileExtension": "cshtml",
+			"shouldRunCacheBuster": 0,
+			"shouldRunHTMLMinifier": 0
+			},
+		{
 			"autoOutputAction": 0,
 			"autoOutputPathFilenamePattern": "*.xslt",
 			"autoOutputPathRelativePath": "",
