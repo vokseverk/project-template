@@ -38,7 +38,7 @@
 		"ft": 2048,
 		"hM": 0,
 		"oA": 1,
-		"oAP": "/build/_all.html",
+		"oAP": "/build/components/_all.html",
 		"oF": 0
 		},
 	"/src/components/all.less": {
@@ -62,7 +62,7 @@
 		"ft": 2048,
 		"hM": 0,
 		"oA": 1,
-		"oAP": "/build/_placeholder.html",
+		"oAP": "/build/components/placeholder/_placeholder.html",
 		"oF": 0
 		},
 	"/src/components/placeholder/placeholder.less": {
@@ -140,7 +140,7 @@
 		"ft": 2048,
 		"hM": 0,
 		"oA": 1,
-		"oAP": "/build/_cpl_nav.html",
+		"oAP": "/build/shared/_cpl_nav.html",
 		"oF": 0
 		},
 	"/src/kit/shared/_head_content.kit": {
@@ -148,7 +148,7 @@
 		"ft": 2048,
 		"hM": 0,
 		"oA": 1,
-		"oAP": "/build/_head_content.html",
+		"oAP": "/build/shared/_head_content.html",
 		"oF": 0
 		},
 	"/src/kit/shared/_script_content.kit": {
@@ -156,7 +156,7 @@
 		"ft": 2048,
 		"hM": 0,
 		"oA": 1,
-		"oAP": "/build/_script_content.html",
+		"oAP": "/build/shared/_script_content.html",
 		"oF": 0
 		},
 	"/src/layouts/all.less": {
@@ -292,7 +292,7 @@
 		"ft": 2048,
 		"hM": 0,
 		"oA": 1,
-		"oAP": "/build/_all.html",
+		"oAP": "/build/panels/_all.html",
 		"oF": 0
 		},
 	"/src/panels/all.less": {
@@ -2307,7 +2307,7 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "kit",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 1,
+		"autoOutputPathStyle": 3,
 		"shouldRunCacheBuster": 0,
 		"shouldRunHTMLMinifier": 0
 		},
