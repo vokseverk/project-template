@@ -2455,11 +2455,22 @@
 		{
 			"autoOutputAction": 2,
 			"autoOutputPathFilenamePattern": "*.cshtml",
-			"autoOutputPathRelativePath": "Views",
+			"autoOutputPathRelativePath": "views",
 			"autoOutputPathReplace1": "",
 			"autoOutputPathReplace2": "",
 			"autoOutputPathStyle": 1,
 			"fileExtension": "cshtml",
+			"shouldRunCacheBuster": 0,
+			"shouldRunHTMLMinifier": 0
+			},
+		{
+			"autoOutputAction": 2,
+			"autoOutputPathFilenamePattern": "*.webp",
+			"autoOutputPathRelativePath": "",
+			"autoOutputPathReplace1": "",
+			"autoOutputPathReplace2": "",
+			"autoOutputPathStyle": 0,
+			"fileExtension": "webp",
 			"shouldRunCacheBuster": 0,
 			"shouldRunHTMLMinifier": 0
 			},
