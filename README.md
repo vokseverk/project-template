@@ -1,7 +1,14 @@
-# Project Template 2020
-
-This is our (as of 2020) project setup for a website with a separate frontend
+---
+Project Name: Project Template 2020
+Project Alias: project-template
+Project Desc: This is our (as of 2020) project setup for a website with a separate frontend
 repository.
+---
+
+
+# [%Project Name]
+
+[%Project Desc]
 
 ## Directory Setup
 
@@ -85,12 +92,9 @@ If you're using Visual Studio Code as your editor, you can use the
 
 ```json
 {
-	"liveServer.settings.root": "{project-template}.Frontend/build"
+	"liveServer.settings.root": "[%Project Alias].Frontend/build"
 }
 ```
-
-**Note:** `{project-template}` should be replaced with the actual project/folder
-name.
 
 
 [KIT]: https://codekitapp.com/help/kit/
