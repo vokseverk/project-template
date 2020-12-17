@@ -1,4 +1,1 @@
 projectDirectory = "$CWD"
-
-[ prepros.config ]
-fileType = 'source.json'
