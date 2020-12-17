@@ -311,6 +311,30 @@
 		"sI": 0,
 		"sU": 0
 		},
+	"/src/panels/sample-panel/_sample-panel.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/build/panels/sample-panel/_sample-panel.html",
+		"oF": 0
+		},
+	"/src/panels/sample-panel/sample-panel.less": {
+		"aP": 1,
+		"bl": 1,
+		"eJ": 0,
+		"ft": 1,
+		"iI": 0,
+		"ma": 0,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/build/assets/sample-panel.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
 	"/vendor/componentize/componentize.css": {
 		"aP": 0,
 		"bl": 0,
@@ -349,8 +373,8 @@
 	},
 "projectAttributes": {
 	"creationDate": 602205694.45881498,
-	"displayValue": "project-template.Frontend",
-	"displayValueWasSetByUser": 0,
+	"displayValue": "​project-template",
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets-red",
 	"iconImageWasSetByUser": 0,
 	"lastBuiltDate": 602267613.92809701
