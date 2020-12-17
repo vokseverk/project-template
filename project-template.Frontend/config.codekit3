@@ -2,6 +2,14 @@
 "AAInfo": "This is a CodeKit 3 project config file. EDITING THIS FILE IS A POOR LIFE DECISION. Doing so may cause CodeKit to crash and/or corrupt your project. Several critical values in this file are 64-bit integers, which JavaScript JSON parsers do not support because JavaScript cannot handle 64-bit integers. These values will be corrupted if the file is parsed with JavaScript. This file is not backwards-compatible with CodeKit 1 or 2. For details, see https://codekitapp.com/",
 "buildSteps": [
 	{
+		"name": "Copy JS modules ",
+		"scriptSourceString": "mkdir -p build/assets/modules\ncp src/js/modules/*.js build/assets/modules\n",
+		"scriptType": 1,
+		"scriptUUIDString": "75970DD2-B94C-4E21-A388-9FB952799365",
+		"stepType": 2,
+		"uuidString": "06534D29-F806-451A-A9F8-78CBE3F91BE4"
+		},
+	{
 		"name": "Process All Remaining Files and Folders",
 		"stepType": 1,
 		"uuidString": "5CD93953-8419-48F3-B317-31E1D510E58B"
@@ -9,19 +17,13 @@
 	],
 "creatorBuild": "33081",
 "files": {
-	"/build": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "/build/build",
-		"oF": 0
-		},
 	"/prepros.config": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/build/prepros.config",
-		"oF": 1
+		"oF": 0
 		},
 	"/src/assets/logo.svg": {
 		"ft": 2097152,
@@ -81,24 +83,57 @@
 		"sI": 0,
 		"sU": 0
 		},
-	"/src/js/app.js": {
+	"/src/js/app.module.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
-		"oAP": "/build/assets/app.js",
+		"oAP": "/build/assets/app.module.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"/src/js/app.nomodule.js": {
+		"bF": 4,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "/build/assets/app.nomodule.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 1
 		},
 	"/src/js/libs.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "/build/assets/libs.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/src/js/modules/app.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "/build/assets/app.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"/src/js/modules/point.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "/build/assets/point.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -349,7 +384,7 @@
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "/build/assets/componentize.js",
 		"oF": 0,
@@ -377,7 +412,7 @@
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets-red",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 602267613.92809701
+	"lastBuiltDate": 629910871.22218299
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

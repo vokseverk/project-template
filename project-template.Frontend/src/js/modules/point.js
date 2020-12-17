@@ -9,3 +9,5 @@ class Point {
 		return `[${this.x}, ${this.y}]`
 	}
 }
+
+export default Point
