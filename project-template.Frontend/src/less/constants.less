@@ -1,2 +1,10 @@
 // Misc. variables
-@color_primary: #314159;
+@color: {
+	pi: #314159;
+	black: #000;
+	white: #fff;
+}
+
+@color_primary: @color[pi];
+@black: @color[black];
+@white: @color[white];
