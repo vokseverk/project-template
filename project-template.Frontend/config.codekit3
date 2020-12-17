@@ -9,6 +9,12 @@
 	],
 "creatorBuild": "33081",
 "files": {
+	"/build": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/build",
+		"oF": 0
+		},
 	"/src/assets/logo.svg": {
 		"ft": 2097152,
 		"miP": 0,
