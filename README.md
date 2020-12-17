@@ -1,8 +1,7 @@
 ---
 Project Name: Project Template 2020
 Project Alias: project-template
-Project Desc: This is our (as of 2020) project setup for a website with a separate frontend
-repository.
+Project Desc: This is our (as of 2020) project setup for a website with a separate frontend repository.
 ---
 
 
@@ -40,7 +39,7 @@ The files in here are [Kit files][KIT] which compile to regular HTML files in
 the `build` folder, maintaining their file structure, e.g.:
 
 
-| Source file                   |  Build file                  |
+| Source file                   | Build file                   |
 |-------------------------------|------------------------------|
 | src/kit/**index**.kit         | build/**index**.html         |
 | src/kit/about/**index**.kit   | build/about/**index**.html   |
@@ -72,29 +71,11 @@ Full page layouts go into the `layouts` folder.
 
 [CodeKit][CK] should pick up all settings from the `config.codekit3` file when you drag the **[%Project Alias].Frontend** folder onto the CodeKit window.
 
+### Windows/Linux
 
-### Prepros (Windows/Linux)
-
-If you're on Windows you should be able to use the [Prepros][PRE] app for
-compiling the assets. A `.config` file is already present, which should set
-everything up for you, almost as if you were using CodeKit on a Mac.
-
-To use it, add the **[%Project Alias].Frontend** folder as a project in Prepros.
-
-You cannot, however, use the *Live Preview* function, as it doesn't (yet?) have
-the ability to set the "root" folder for the site, and you'll need that since
-you're building everything into the `build` folder.
-
-If you're using Visual Studio Code as your editor, you can use the
-**Live Server** extension and configure it to use the `build` folder as root:
-
-(This goes into your Workspace's `.vscode/settings.json` file).
-
-```json
-{
-	"liveServer.settings.root": "[%Project Alias].Frontend/build"
-}
-```
+If you're on Windows or Linux, you could have a look at the [Prepros][PRE] app
+for compiling the assets. (It's been a while since I've tried it so I'm not
+sure if it's on par with what we get with CodeKit.)
 
 
 [KIT]: https://codekitapp.com/help/kit/
