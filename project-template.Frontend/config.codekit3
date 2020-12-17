@@ -17,12 +17,10 @@
 	],
 "creatorBuild": "33081",
 "files": {
-	"/prepros.config": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/prepros.config",
+	"/build": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/build",
 		"oF": 0
 		},
 	"/src/assets/logo.svg": {
@@ -104,17 +102,6 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 1
-		},
-	"/src/js/libs.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "/build/assets/libs.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
 		},
 	"/src/js/modules/app.js": {
 		"bF": 0,
