@@ -149,6 +149,14 @@
 		"oAP": "/build/panels.html",
 		"oF": 0
 		},
+	"/src/kit/shared/_constants.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/build/shared/_constants.html",
+		"oF": 0
+		},
 	"/src/kit/shared/_cpl_nav.kit": {
 		"cB": 0,
 		"ft": 2048,
