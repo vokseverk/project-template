@@ -33,6 +33,29 @@ src
 These are regular source files that compile into the
 `build/assets` folder as `.js` & `.css` files, side by side.
 
+The main Less file is `less/app.less` - it imports all the others and gets compiled
+to `app.css` using _AutoPrefixer_.
+
+The main JavaScript file is the `js/modules/app.js` file - you'll find two
+wrapper files in the js/ directory: `app.module.js` and `app.nomodule.js`. They
+both get processed and compiled into the `build/assets/` folder.
+The module.js file only gets bundled while the nomodule.js file is transpiled
+with Babel first and then bundled.
+
+Both files are referenced from the HTML - but in this way:
+
+```html
+<script type="module" src="/assets/app.module.js"></script>
+<script nomodule defer src="/assets/app.nomodule.js"></script>
+```
+
+These are mutually exclusive since browsers that support the newer JavaScript
+modules syntax will load the first one and ignore the second (due to the
+`nomodule` attribute) while browsers that don't understand modules won't load
+the first one because of the `type="module"` attribute, but gladly load the
+second.
+
+
 ### kit
 
 The files in here are [Kit files][KIT] which compile to regular HTML files in
