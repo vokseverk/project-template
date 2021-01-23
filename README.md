@@ -1,48 +1,45 @@
----
-Project Name: Project Template 2020
-Project Alias: project-template
-Project Desc: This is our (as of 2020) project setup for a website with a separate frontend repository.
----
 
+# Project Template 2021
 
-# [%Project Name]
-
-[%Project Desc]
+This is our project setup for a website with a separate frontend repository.
 
 ## Directory Setup
 
-The `src` folder is structured like this:
+The folder structure looks like this:
 
 ```text
-src
- ├── js
- ├── less
- ├ - - - - - - - -
- ├── kit
- ├ - - - - - - - -
- ├── assets
- ├── previewmedia
- ├ - - - - - - - -
- ├── components
- ├── panels
- └── layouts
+[build]
+[src]
+  ├── [assets]
+  ├── [components]
+  ├── [js]
+  ├── [kit]
+  ├── [layouts]
+  ├── [less]
+  ├── [media]
+  └── [panels]
+[vendor]
 ```
 
-### js & less
+### build & vendor
 
-These are regular source files that compile into the
+The `build` folder should be automatically built; more on that in a sec...
+The `vendor` folder contains external modules, libraries and/or frameworks that are used in the frontend code.
+
+### src/js & src/less
+
+These are source files that compile into the
 `build/assets` folder as `.js` & `.css` files, side by side.
 
-The main Less file is `less/app.less` - it imports all the others and gets compiled
-to `app.css` using _AutoPrefixer_.
+The main Less file is `less/app.less` - it imports all the others and gets
+compiled to `app.css` using _AutoPrefixer_.
 
 The main JavaScript file is the `js/modules/app.js` file - you'll find two
-wrapper files in the js/ directory: `app.module.js` and `app.nomodule.js`. They
-both get processed and compiled into the `build/assets/` folder.
-The module.js file only gets bundled while the nomodule.js file is transpiled
-with Babel first and then bundled.
+wrapper files in the `js/` directory: `app.module.js` and `app.nomodule.js`. 
+They both get processed and compiled into the `build/assets/` folder.
+The `module.js` file only gets bundled, while the `nomodule.js` file is transpiled with Babel first and then bundled.
 
-Both files are referenced from the HTML - but in this way:
+Both files are referenced from the HTML - in this way:
 
 ```html
 <script type="module" src="/assets/app.module.js"></script>
@@ -69,13 +66,13 @@ the `build` folder, maintaining their file structure, e.g.:
 | src/kit/projects/**free**.kit | build/projects/**free**.html |
 
 
-### assets & previewmedia
+### assets & media
 
 These hold images, icons & maybe webfonts for use in the site; they should get
-copied to the build folder (in `build/assets` and `build/previewmedia`
+copied to the build folder (in `build/assets` and `build/media`
 respectively).
 
-Files in `assets` are for icons, images & fonts, while `previewmedia` is meant
+Files in `assets` are for icons, images & fonts, while `media` is meant
 for images that would ideally come from a CMS or similar.
 
 ### components, panels & layouts
@@ -90,9 +87,16 @@ Full page layouts go into the `layouts` folder.
 
 ## Build Setup
 
+The template ships with a pre-configured config file for CodeKit but if you're
+more comfortable with **webpack** or similar, here's what's being done:
+
+- JavaScript, Less and assets are built into a `/build/assets/` folder in the root of the project
+- Files in `media` are copied into `/build/media/`
+- Kit files are processed and compiled as described earlier to end up as HTML files in the root and maybe some subfolders
+
 ### CodeKit (macOS)
 
-[CodeKit][CK] should pick up all settings from the `config.codekit3` file when you drag the **[%Project Alias].Frontend** folder onto the CodeKit window.
+[CodeKit][CK] should pick up all settings from the `config.codekit3` file when you drag the **project-template.Frontend** folder onto the CodeKit window.
 
 ### Windows/Linux
 
