@@ -49,6 +49,14 @@
 		"sI": 0,
 		"sU": 0
 		},
+	"/src/components/index.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/components/index.html",
+		"oF": 0
+		},
 	"/src/components/placeholder/_placeholder.kit": {
 		"cB": 0,
 		"ft": 2048,
@@ -117,14 +125,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"/src/kit/components.kit": {
-		"cB": 0,
-		"ft": 2048,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/components.html",
-		"oF": 0
-		},
 	"/src/kit/dashboard.kit": {
 		"cB": 0,
 		"ft": 2048,
@@ -139,14 +139,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/build/index.html",
-		"oF": 0
-		},
-	"/src/kit/panels.kit": {
-		"cB": 0,
-		"ft": 2048,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/panels.html",
 		"oF": 0
 		},
 	"/src/kit/shared/_constants.kit": {
@@ -332,6 +324,14 @@
 		"rwU": 0,
 		"sI": 0,
 		"sU": 0
+		},
+	"/src/panels/index.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/panels/index.html",
+		"oF": 0
 		},
 	"/src/panels/sample-panel/_sample-panel.kit": {
 		"cB": 0,
