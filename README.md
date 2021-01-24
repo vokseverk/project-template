@@ -85,6 +85,8 @@ Larger elements that wraps a couple (or a list) of elements gets to go into the
 
 Full page layouts go into the `layouts` folder.
 
+These are part of the vendored [Componentize][CPL] files.
+
 ## Build Setup
 
 The template ships with a pre-configured config file for CodeKit but if you're
@@ -108,3 +110,4 @@ sure if it's on par with what we get with CodeKit.)
 [KIT]: https://codekitapp.com/help/kit/
 [CK]:  https://codekitapp.com/
 [PRE]: https://prepros.io/
+[CPL]: https://github.com/greystate/componentize/
