@@ -20,17 +20,36 @@
     padding-right: 0;
   }
 }
+.components-filter {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.components-filter > * + * {
+  margin-left: 10px;
+}
+.filtered .component:not(.matched) {
+  display: none;
+}
+.components-nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 1em auto;
+}
+.components-nav > * {
+  padding: 0.5em 1em;
+  min-width: 10ch;
+}
 .components-toc {
-  -webkit-transition: opacity 0.3s linear;
+  font-family: monospace;
   transition: opacity 0.3s linear;
   position: fixed;
   right: 10px;
   top: 10px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   padding: 10px;
-  box-sizing: content-box;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   opacity: 0.05;
@@ -69,17 +88,6 @@
   display: list-item;
   font-family: monospace;
 }
-.components-nav {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  margin: 1em auto;
-}
-.components-nav > * {
-  padding: 0.5em 1em;
-  min-width: 10ch;
-}
 .component {
   position: relative;
   margin-top: 3em;
@@ -96,6 +104,34 @@
   right: 100%;
   margin-right: 20px;
 }
+.component:empty,
+.component > *:empty {
+  min-height: 3em;
+  background: hsla(120, 50%, 55%, 0.5);
+}
+.component .state-toggle {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  transform: translateX(100%);
+}
+@media screen and (max-width: 768px) {
+  .component::before {
+    position: static;
+    text-align: center;
+    padding: 4px;
+    background: #eee;
+    display: inline-block;
+  }
+  .component.solid-bg,
+  .component.alt-bg {
+    border-radius: 0;
+  }
+  .component .state-toggle {
+    right: 0;
+    transform: none;
+  }
+}
 .component.solid-bg {
   padding: 25px;
   background: #505050;
@@ -103,7 +139,6 @@
   border-radius: 12px;
 }
 .component.alt-bg {
-  -webkit-transition: background-color 0.5s linear;
   transition: background-color 0.5s linear;
   padding: 25px;
   background: rgba(255, 144, 192, 0.15) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAACKElEQVR4nO3VoRHEMBAEQcn1gX3+SZ2p0FAZdEewZGr3Wuu/+IyZuT2Bw3N7AHyZQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBMJvZm5v4LD3vj2BgweBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoHwAvXgB8+uySnZAAAAAElFTkSuQmCC') left top;
@@ -125,21 +160,44 @@
 .component.large-space-before {
   padding-top: 250px;
 }
-.component:empty,
-.component > *:empty {
-  min-height: 3em;
-  background: rgba(83, 198, 83, 0.5);
+.component-states-modifiers {
+  font-family: monospace;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+  position: absolute;
+  border: none;
+  padding: 2em 10px 10px;
+  margin: -12px 0 0;
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
-@media screen and (max-width: 768px) {
-  .component::before {
-    position: static;
-    text-align: center;
-    padding: 4px;
-    background: #eee;
-    display: inline-block;
-  }
-  .component.solid-bg,
-  .component.alt-bg {
-    border-radius: 0;
-  }
+.component:hover .component-states-modifiers {
+  opacity: 1;
+}
+.component-states-modifiers legend {
+  display: inline-block;
+  position: relative;
+  top: 2em;
+}
+.component-states-modifiers > div {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+.component-states-modifiers > div > * + * {
+  margin-left: 1em;
+}
+.component-states-modifiers > div + div {
+  margin-left: 3em;
+}
+.component-states-modifiers > div input + label {
+  cursor: pointer;
+  padding: 2px;
+  padding-left: 0.5ch;
 }
