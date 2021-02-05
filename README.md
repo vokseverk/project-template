@@ -8,7 +8,9 @@ This is our project setup for a website with a separate frontend repository.
 - Click the **Use this template** button above to have GitHub create a new repository in your account. 
 - Clone the repository down to your machine
 - Rename the `project-template.Frontend` folder to better suit your project (e.g. `movietracker.Frontend` or maybe `secret-website-project.Frontend`?)
-- If you're using CodeKit, drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
+- If you're using CodeKit:
+	- Rename `$projectName` in `src/kit/shared/_constants.kit`
+	- Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
 - Start coding!
 
 ## Directory Setup
