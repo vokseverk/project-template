@@ -109,6 +109,7 @@ more comfortable with **webpack** or similar, here's what's being done:
 ### CodeKit (macOS)
 
 [CodeKit][CK] should pick up all settings from the `config.codekit3` file when you drag the **project-template.Frontend** folder onto the CodeKit window.
+CodeKit even has a [Read-Only Mode][ROM] that allows for using the app without a license. You just can't change any of the settings.
 
 ### Windows/Linux
 
@@ -121,3 +122,4 @@ sure if it's on par with what we get with CodeKit.)
 [CK]:  https://codekitapp.com/
 [PRE]: https://prepros.io/
 [CPL]: https://github.com/greystate/componentize/
+[ROM]: https://codekitapp.com/help/read-only/
