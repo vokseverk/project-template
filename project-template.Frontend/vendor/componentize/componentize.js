@@ -96,8 +96,7 @@
 	}
 
 	function tableOfContents(items) {
-		// items = (Array.from components.querySelectorAll '.component').sort (a, b) => a.dataset.title > b.dataset.title
-		items.sort((a, b) => a.dataset.title > b.dataset.title);
+		items.sort((a, b) => a.dataset.title > b.dataset.title ? 1 : -1);
 		const tocElement = document.createElement('section');
 		tocElement.classList.add('components-toc');
 		const entries = [ '<ul>' ];
