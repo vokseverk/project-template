@@ -1,4 +1,5 @@
 {
   "workspace.color" : 1,
-  "workspace.name" : "Project Template"
+  "workspace.name" : "Project Template",
+  "codekit.folder": "project-template.Frontend"
 }
