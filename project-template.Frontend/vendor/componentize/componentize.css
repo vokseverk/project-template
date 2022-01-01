@@ -45,21 +45,23 @@
 }
 .components-toc {
   font-family: monospace;
-  transition: opacity 0.3s linear;
   position: fixed;
   right: 10px;
   top: 10px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
-  opacity: 0.05;
   font-size: 12px;
   border-radius: 3px;
   overflow-y: scroll;
   max-height: calc(100vh - 20px);
+  transform: translateX(calc(100% - 50px));
+  opacity: 0.05;
+  transition: opacity 0.3s linear, transform 0.3s ease-in-out;
 }
 .components-toc:hover {
   opacity: 0.9;
+  transform: translate(0);
 }
 .components-toc ul {
   list-style: none;
@@ -148,6 +150,8 @@
 .component.alt-bg:hover {
   background-color: #ff90c0;
 }
+.component[data-modifiers],
+.component[data-states],
 .component.space-after {
   padding-bottom: 100px;
 }
@@ -167,10 +171,8 @@
   position: absolute;
   border: none;
   padding: 2em 10px 10px;
-  margin: -12px 0 0;
+  margin: 12px 0 0;
   border-radius: 6px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
   max-width: -webkit-max-content;
