@@ -13,6 +13,8 @@ This is our project setup for a website with a separate frontend repository.
 - If you're using CodeKit:
 	- Rename `$projectName` in `src/kit/shared/_constants.kit`
 	- Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
+- If you're using Nova:
+	- Rename the `codekit.folder` + `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
 - Start coding!
 
 ## Directory Setup
