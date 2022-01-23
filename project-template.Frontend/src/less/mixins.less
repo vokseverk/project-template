@@ -32,3 +32,11 @@
 	.centered();
 	max-width: @width;
 }
+
+.centered(@width, @padding) {
+	.centered();
+	max-width: @width;
+	padding-right: @padding;
+	padding-left: @padding;
+	box-sizing: content-box;
+}
