@@ -32,6 +32,7 @@ The folder structure looks like this:
   ├── [less]
   ├── [media]
   └── [panels]
+[test]
 [vendor]
 ```
 
@@ -66,6 +67,11 @@ modules syntax will load the first one and ignore the second (due to the
 the first one because of the `type="module"` attribute, but gladly load the
 second.
 
+### test
+
+The project template comes with Jasmine testing pre-configured. Open the
+SpecRunner.html file in here to run the tests. There's a sample spec file in the
+`spec` folder for you to look at.
 
 ### kit
 
