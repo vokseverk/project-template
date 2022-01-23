@@ -1,5 +1,5 @@
 
-# Project Template 2021
+# Project Template 2022
 
 This is our project setup for a website with a separate frontend repository.
 
