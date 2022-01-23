@@ -69,8 +69,8 @@ second.
 
 ### test
 
-The project template comes with Jasmine testing pre-configured. Open the
-SpecRunner.html file in here to run the tests. There's a sample spec file in the
+The project template comes with [Jasmine][JAS] testing pre-configured. Open the
+`SpecRunner.html` file in here to run the tests. There's a sample spec file in the
 `spec` folder for you to look at.
 
 ### kit
@@ -133,3 +133,4 @@ sure if it's on par with what we get with CodeKit.)
 [PRE]: https://prepros.io/
 [CPL]: https://github.com/greystate/componentize/
 [ROM]: https://codekitapp.com/help/read-only/
+[JAS]: https://jasmine.github.io/
