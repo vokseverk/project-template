@@ -70,7 +70,8 @@ second.
 ### test
 
 The project template comes with [Jasmine][JAS] testing pre-configured. Open the
-`SpecRunner.html` file in here to run the tests. There's a sample spec file in the
+`SpecRunner.html` file in a browser (in Nova there should be a "Test" available)
+to run the tests. There's a sample spec file in the
 `spec` folder for you to look at.
 
 ### kit

@@ -1,0 +1,13 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "script" : "open \"${TM_PROJECT_DIRECTORY}\/${CK_FOLDER}\/test\/SpecRunner.html\""
+    }
+  },
+  "environment" : {
+    "CK_FOLDER" : "${Config:codekit.folder}",
+    "TM_PROJECT_DIRECTORY" : "${WorkspaceFolder}"
+  },
+  "identifier" : "83E866F8-313C-4D20-83D4-4E5E7EE86650"
+}
