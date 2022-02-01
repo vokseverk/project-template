@@ -2,11 +2,18 @@
 	.stack();
 
 	&.contain {
-		p, li, h2, h3, h4 {
+		p, ul, ol, h2, h3, h4 {
 			max-inline-size: @measure;
 		}
 	}
 
+	&.start { text-align: start; }
 	&.center { text-align: center; }
 	&.end { text-align: end; }
+
+	blockquote {
+		padding-inline-start: 3rem;
+		border-inline-start: 0.5em solid;
+		font-style: italic;
+	}
 }

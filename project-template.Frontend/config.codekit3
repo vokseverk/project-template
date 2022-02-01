@@ -149,6 +149,14 @@
       "oAP" : "\/build\/components\/text\/_p2s.html",
       "oF" : 0
     },
+    "\/src\/components\/text\/_quote.kit" : {
+      "cB" : 0,
+      "ft" : 2048,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/components\/text\/_quote.html",
+      "oF" : 0
+    },
     "\/src\/components\/text\/_text.kit" : {
       "cB" : 0,
       "ft" : 2048,
