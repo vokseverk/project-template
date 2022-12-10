@@ -5,16 +5,16 @@ This is our project setup for a website with a separate frontend repository.
 
 ## Using the template
 
-- Click the **Use this template** button above to have GitHub create a new repository in your account. 
+- Click the **Use this template** button above to have GitHub create a new repository in your account.
 - Clone the repository down to your machine
 - Rename the `project-template.Frontend` folder to better suit your project (e.g. `movietracker.Frontend` or maybe `secret-website-project.Frontend`?)
-- If you're using TextMate:
+- If you're using [TextMate][TM2]:
 	- Replace `project-template` in the `$TEST_DIR` variable inside the `.tm_properties` file with your new project name
 - If you're using CodeKit:
 	- Rename `$projectName` in `src/kit/shared/_constants.kit`
 	- Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
-- If you're using Nova:
-	- Rename the `codekit.folder` + `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
+- If you're using [Nova][NOVA]:
+	- Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
 - Start coding!
 
 ## Directory Setup
@@ -50,7 +50,7 @@ The main Less file is `less/app.less` - it imports all the others and gets
 compiled to `app.css` using _AutoPrefixer_.
 
 The main JavaScript file is the `js/modules/app.js` file - you'll find two
-wrapper files in the `js/` directory: `app.module.js` and `app.nomodule.js`. 
+wrapper files in the `js/` directory: `app.module.js` and `app.nomodule.js`.
 They both get processed and compiled into the `build/assets/` folder.
 The `module.js` file only gets bundled, while the `nomodule.js` file is transpiled with Babel first and then bundled.
 
@@ -129,9 +129,11 @@ for compiling the assets. (It's been a while since I've tried it so I'm not
 sure if it's on par with what we get with CodeKit.)
 
 
-[KIT]: https://codekitapp.com/help/kit/
-[CK]:  https://codekitapp.com/
-[PRE]: https://prepros.io/
-[CPL]: https://github.com/greystate/componentize/
-[ROM]: https://codekitapp.com/help/read-only/
-[JAS]: https://jasmine.github.io/
+[KIT]:  https://codekitapp.com/help/kit/
+[CK]:   https://codekitapp.com/
+[PRE]:  https://prepros.io/
+[CPL]:  https://github.com/greystate/componentize/
+[ROM]:  https://codekitapp.com/help/read-only/
+[JAS]:  https://jasmine.github.io/
+[NOVA]: https://nova.app/
+[TM2]:  https://macromates.com/
