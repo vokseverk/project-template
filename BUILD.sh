@@ -42,16 +42,16 @@ FRONTEND_DIR="${PROJECT_ROOT}/${PROJECT_SHORTNAME}.Frontend" # The frontend file
 SETTINGS_FILE="${UMB_DIR}/src/UmbracoProject/appsettings.json"
 
 # Get current asset versions from appsettings.json
-ASSETS_VERSION=`jq -r '.${SETTINGS_ROOT}.assetsVersion' ${UMB_DIR}/src/UmbracoProject/appsettings.json`
+ASSETS_VERSION=`jq -r '.'"${SETTINGS_ROOT}"'.assetsVersion' ${SETTINGS_FILE}`
 
 # Handle CSS & JS specially by versioning them (so we can bump them without invalidating all other assets)
 
-CSS_FILE=`jq -r '.${SETTINGS_ROOT}.mainStyleSheet.name' ${SETTINGS_FILE}`
-CSS_VERSION=`jq -r '.${SETTINGS_ROOT}.mainStyleSheet.version' ${SETTINGS_FILE}`
+CSS_FILE=`jq -r '.'"${SETTINGS_ROOT}"'.mainStyleSheet.name' ${SETTINGS_FILE}`
+CSS_VERSION=`jq -r '.'"${SETTINGS_ROOT}"'.mainStyleSheet.version' ${SETTINGS_FILE}`
 
-JS_FILE=`jq -r '.${SETTINGS_ROOT}.mainScriptFile.moduleFile' ${SETTINGS_FILE}`
-LEGACY_JS_FILE=`jq -r '.${SETTINGS_ROOT}.mainScriptFile.legacyFile' ${SETTINGS_FILE}`
-JS_VERSION=`jq -r '.${SETTINGS_ROOT}.mainScriptFile.version' ${SETTINGS_FILE}`
+JS_FILE=`jq -r '.'"${SETTINGS_ROOT}"'.mainScriptFile.moduleFile' ${SETTINGS_FILE}`
+LEGACY_JS_FILE=`jq -r '.'"${SETTINGS_ROOT}"'.mainScriptFile.legacyFile' ${SETTINGS_FILE}`
+JS_VERSION=`jq -r '.'"${SETTINGS_ROOT}"'.mainScriptFile.version' ${SETTINGS_FILE}`
 
 if [ $DEBUG == "yes" ]; then
 	echo "Found $ASSETS_VERSION (CSS: $CSS_FILE @v $CSS_VERSION) (JS: $JS_FILE @v $JS_VERSION / $LEGACY_JS_FILE)"
