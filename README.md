@@ -1,5 +1,4 @@
-
-# Project Template 2022
+# Project Template 2023
 
 This is our project setup for a website with a separate frontend repository.
 
@@ -8,14 +7,23 @@ This is our project setup for a website with a separate frontend repository.
 - Click the **Use this template** button above to have GitHub create a new repository in your account.
 - Clone the repository down to your machine
 - Rename the `project-template.Frontend` folder to better suit your project (e.g. `movietracker.Frontend` or maybe `secret-website-project.Frontend`?)
-- If you're using [TextMate][TM2]:
-	- Replace `project-template` in the `$TEST_DIR` variable inside the `.tm_properties` file with your new project name
+- If you're using [Nova][NOVA]:
+	- Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
 - If you're using CodeKit:
 	- Rename `$projectName` in `src/kit/shared/_constants.kit`
 	- Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
-- If you're using [Nova][NOVA]:
-	- Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
+- If you're using [TextMate][TM2]:
+	- Replace `project-template` in the `$TEST_DIR` variable inside the `.tm_properties` file with your new project name
 - Start coding!
+
+## Using this with a project on Umbraco Cloud
+
+This repository is already set to ignore a `*.Web` folder, so clone your cloud project into
+that, like this:
+
+```bash
+$ git clone --origin LIVE https://scm.umbraco.io/euwest01/PROJECT_ALIAS.git PROJECT_NAME.Web
+```
 
 ## Directory Setup
 
