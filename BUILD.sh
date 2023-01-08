@@ -4,6 +4,24 @@ echo "Building frontend"
 # 3. Create a new assets/AxBx/ folder in the .Web project
 # 4. Copy the build/assets/ folder from the .Frontend project into the new folder in the .Web project
 
+# Project settings sample to add to the root of appsettings.json:
+# (If you change the root key, change the SETTINGS_ROOT variable below as well)
+#
+# "ProjectSettings": {
+# 	"assetsVersion": "A0B0",
+# 	"mainStyleSheet": {
+# 		"name": "app.css",
+# 		"version": "A0B1"
+# 	},
+# 	"mainScriptFile": {
+# 		"moduleFile": "app.module.js",
+# 		"legacyFile": "app.nomodule.js",
+# 		"version": "A0B2"
+# 	}
+# }
+
+SETTINGS_ROOT="ProjectSettings"
+
 # Configuration variables - these should be supplied on the command line
 
 PROJECT_ROOT="${TM_PROJECT_DIRECTORY}"
@@ -22,7 +40,6 @@ UMB_DIR="${PROJECT_ROOT}/${PROJECT_SHORTNAME}.Web" # The Web site's root
 FRONTEND_DIR="${PROJECT_ROOT}/${PROJECT_SHORTNAME}.Frontend" # The frontend files
 
 SETTINGS_FILE="${UMB_DIR}/src/UmbracoProject/appsettings.json"
-SETTINGS_ROOT="ProjectSettings"
 
 # Get current asset versions from appsettings.json
 ASSETS_VERSION=`jq -r '.${SETTINGS_ROOT}.assetsVersion' ${UMB_DIR}/src/UmbracoProject/appsettings.json`
