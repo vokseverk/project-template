@@ -6,7 +6,7 @@
     }
   },
   "environment" : {
-    "CK_FOLDER" : "${Config:codekit.folder}",
+    "CK_FOLDER" : "${Config:com.CodeKitApp.Nova.codekitFolder}",
     "TM_PROJECT_DIRECTORY" : "${WorkspaceFolder}"
   },
   "identifier" : "83E866F8-313C-4D20-83D4-4E5E7EE86650"
