@@ -9,7 +9,8 @@ This is our project setup for a website with a separate frontend repository.
 - Rename the `project-template.Frontend` folder to better suit your project (e.g. `movietracker.Frontend` or maybe `secret-website-project.Frontend`?)
 - If you're using [Nova][NOVA]:
 	- Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
-- If you're using CodeKit:
+	- Choose the `.Frontend` folder in the CodeKit Extension's settings screen
+- If you're using [CodeKit][CK]:
 	- Rename `$projectName` in `src/kit/shared/_constants.kit`
 	- Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
 - If you're using [TextMate][TM2]:
@@ -27,7 +28,7 @@ $ git clone --origin LIVE https://scm.umbraco.io/euwest01/PROJECT_ALIAS.git PROJ
 
 ## Directory Setup
 
-The folder structure looks like this:
+The folder structure inside `.Frontend` looks like this:
 
 ```text
 [build]
