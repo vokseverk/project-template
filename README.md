@@ -17,6 +17,7 @@ This is our project setup for a website with a separate frontend repository.
 	- Replace `project-template` in the `$TEST_DIR` variable inside the `.tm_properties` file with your new project name
 - Start coding!
 
+
 ## Using this with a project on Umbraco Cloud
 
 This repository is already set to ignore a `*.Web` folder, so clone your cloud project into
@@ -32,6 +33,7 @@ The folder structure inside `.Frontend` looks like this:
 
 ```text
 [build]
+[icons]
 [src]
   ├── [assets]
   ├── [components]
@@ -75,6 +77,17 @@ modules syntax will load the first one and ignore the second (due to the
 `nomodule` attribute) while browsers that don't understand modules won't load
 the first one because of the `type="module"` attribute, but gladly load the
 second.
+
+### icons
+
+The `icons` folder holds [the bare minimum][ICNS] to supply the website with a working favicon etc.
+You should modify them all like this:
+
+- [ ] Modify the `icon.svg` file (keep it square)
+- [ ] Export (or modify) the 512×512 PNG (`icon-512.png`)
+- [ ] Export the 192×192 & 180×180 (`apple-touch-icon.png`) versions from that
+- [ ] Use [X-Icon Editor][ICNX] to create the `favicon.ico` file by importing and tweaking there
+- [ ] Replace `project-template` in the `icons/manifest.webmanifest` file with your project name
 
 ### test
 
@@ -146,3 +159,5 @@ sure if it's on par with what we get with CodeKit.)
 [JAS]:  https://jasmine.github.io/
 [NOVA]: https://nova.app/
 [TM2]:  https://macromates.com/
+[ICNS]: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+[ICNX]: https://www.xiconeditor.com/

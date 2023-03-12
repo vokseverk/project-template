@@ -15,6 +15,61 @@
       "oAP" : "\/build\/build",
       "oF" : 0
     },
+    "\/icons\/apple-touch-icon.png" : {
+      "ft" : 32768,
+      "iS" : 7644,
+      "oA" : 0,
+      "oAP" : "\/build\/icons\/apple-touch-icon.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/icons\/favicon.ico" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/icons\/favicon.ico",
+      "oF" : 0
+    },
+    "\/icons\/icon-192.png" : {
+      "ft" : 32768,
+      "iS" : 7557,
+      "oA" : 0,
+      "oAP" : "\/build\/icons\/icon-192.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/icons\/icon-512.png" : {
+      "ft" : 32768,
+      "iS" : 34047,
+      "oA" : 0,
+      "oAP" : "\/build\/icons\/icon-512.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/icons\/manifest.webmanifest" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/icons\/manifest.webmanifest",
+      "oF" : 0
+    },
     "\/src\/assets\/logo.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -565,9 +620,9 @@
     "creationDate" : 602205694.45881498,
     "displayValue" : "​project-template",
     "displayValueWasSetByUser" : 1,
-    "iconImageName" : "brackets-red",
+    "iconImageName" : "\/icons\/apple-touch-icon.png",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 662767471.44406199
+    "lastBuiltDate" : 700315156.98004997
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
