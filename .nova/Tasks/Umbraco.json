@@ -2,7 +2,7 @@
   "actions" : {
     "run" : {
       "enabled" : true,
-      "path" : "BUILD.sh"
+      "script" : "dotnet run --project $TM_PROJECT_NAME.Web\/src\/UmbracoProject"
     }
   },
   "environment" : {
