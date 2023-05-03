@@ -27,6 +27,11 @@ that, like this:
 $ git clone --origin LIVE https://scm.umbraco.io/euwest01/PROJECT_ALIAS.git PROJECT_NAME.Web
 ```
 
+You can use the Umbraco > Run task in Nova to start the cloned site.
+
+The Frontend > Build task is for copying the comppiled assets etc. from the `.Frontend`
+build folder to the current `.Web` assets folder.
+
 ## Directory Setup
 
 The folder structure inside `.Frontend` looks like this:
@@ -92,9 +97,8 @@ You should modify them all like this:
 ### test
 
 The project template comes with [Jasmine][JAS] testing pre-configured. Open the
-`SpecRunner.html` file in a browser (in Nova there should be a "Test" available)
-to run the tests. There's a sample spec file in the
-`spec` folder for you to look at.
+`SpecRunner.html` file in a browser (in Nova there should be a "Test" task available)
+to run the tests. There's a sample spec file in the `spec` folder for you to look at.
 
 ### kit
 

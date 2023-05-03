@@ -1,0 +1,13 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "path" : "BUILD.sh"
+    }
+  },
+  "environment" : {
+    "TM_PROJECT_DIRECTORY" : "${WorkspaceFolder}",
+    "TM_PROJECT_NAME" : "${WorkspaceFolderBasename}"
+  },
+  "openLogOnRun" : "start"
+}
