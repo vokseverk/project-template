@@ -57,14 +57,22 @@ if [ $DEBUG == "yes" ]; then
 	echo "Found $ASSETS_VERSION (CSS: $CSS_FILE @v $CSS_VERSION) (JS: $JS_FILE @v $JS_VERSION / $LEGACY_JS_FILE)"
 fi
 
-CSS_BASENAME=`basename -s .css $CSS_FILE`
-CSS_FILENAME="${CSS_BASENAME}.${CSS_VERSION}.css"
+if [ $CSS_VERSION == null ]; then
+	CSS_FILENAME="${CSS_FILE}"
+else
+	CSS_BASENAME=`basename -s .css $CSS_FILE`
+	CSS_FILENAME="${CSS_BASENAME}.${CSS_VERSION}.css"
+fi
 
-JS_BASENAME=`basename -s .js $JS_FILE`
-JS_FILENAME="${JS_BASENAME}.${JS_VERSION}.js"
-
-JS_LEGACY_BASENAME=`basename -s .js $LEGACY_JS_FILE`
-JS_LEGACY_FILENAME="${JS_LEGACY_BASENAME}.${JS_VERSION}.js"
+if [ $JS_VERSION == null ]; then
+	JS_FILENAME="${JS_FILE}"
+	JS_LEGACY_FILENAME="${LEGACY_JS_FILE}"
+else
+	JS_BASENAME=`basename -s .js $JS_FILE`
+	JS_FILENAME="${JS_BASENAME}.${JS_VERSION}.js"
+	JS_LEGACY_BASENAME=`basename -s .js $LEGACY_JS_FILE`
+	JS_LEGACY_FILENAME="${JS_LEGACY_BASENAME}.${JS_VERSION}.js"
+fi
 
 DEPLOY_DIR=$UMB_DIR/src/UmbracoProject/wwwroot/assets/$ASSETS_VERSION
 
