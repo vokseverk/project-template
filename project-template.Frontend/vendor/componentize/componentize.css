@@ -12,6 +12,9 @@
   top: 4px;
   right: 4px;
 }
+.debug .components {
+  max-width: none;
+}
 @media screen and (max-width: 768px) {
   .components {
     width: auto;
@@ -32,17 +35,6 @@
 .filtered .component:not(.matched) {
   display: none;
 }
-.components-nav {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  margin: 1em auto;
-}
-.components-nav > * {
-  padding: 0.5em 1em;
-  min-width: 10ch;
-}
 .components-toc {
   font-family: monospace;
   position: fixed;
@@ -55,13 +47,17 @@
   border-radius: 3px;
   overflow-y: scroll;
   max-height: calc(100vh - 20px);
-  transform: translateX(calc(100% - 50px));
+  -webkit-transform: translateX(calc(100% - 50px));
+          transform: translateX(calc(100% - 50px));
   opacity: 0.05;
+  transition: opacity 0.3s linear, -webkit-transform 0.3s ease-in-out;
   transition: opacity 0.3s linear, transform 0.3s ease-in-out;
+  transition: opacity 0.3s linear, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 .components-toc:hover {
   opacity: 0.9;
-  transform: translate(0);
+  -webkit-transform: translate(0);
+          transform: translate(0);
 }
 .components-toc ul {
   list-style: none;
@@ -115,7 +111,8 @@
   position: absolute;
   top: 0;
   right: -10px;
-  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 @media screen and (max-width: 768px) {
   .component::before {
@@ -131,7 +128,8 @@
   }
   .component .state-toggle {
     right: 0;
-    transform: none;
+    -webkit-transform: none;
+            transform: none;
   }
 }
 .component.solid-bg {

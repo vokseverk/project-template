@@ -9,6 +9,7 @@
 		legend.textContent = 'States & Modifiers';
 
 		togglesElement.appendChild(legend);
+		const innerComponent = componentWrapper.firstElementChild;
 
 		const identifier = getIdentifierFromName(componentWrapper.dataset.title);
 
@@ -24,6 +25,7 @@
 				input.name = `mod-${modifier}`;
 				input.value = modifier;
 				input.id = `${identifier}-mod-${modifier}`;
+				input.checked = innerComponent.classList.contains(modifier);
 
 				const label = document.createElement('label');
 				label.htmlFor = input.id;
@@ -47,7 +49,7 @@
 				input.name = `${identifier}-state`;
 				input.value = state;
 				input.id = `${identifier}-state-${state}`;
-				input.checked = index == 0;
+				input.checked = innerComponent.classList.contains(state) || index == 0;
 
 				const label = document.createElement('label');
 				label.htmlFor = input.id;
