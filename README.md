@@ -27,9 +27,11 @@ that, like this:
 $ git clone --origin LIVE https://scm.umbraco.io/euwest01/PROJECT_ALIAS.git PROJECT_NAME.Web
 ```
 
-You can use the Umbraco > Run task in Nova to start the cloned site.
+You can use the *Umbraco > Run* task in Nova to start the cloned site. After you've run the site
+for the first time, grab the port number and put it in the `src/kit/shared/_constants.kit`,
+replacing the dummy `12345` in the `$portNumber` constant.
 
-The Frontend > Build task is for copying the comppiled assets etc. from the `.Frontend`
+The *Frontend > Build* task is for copying the compiled assets etc. from the `.Frontend`
 build folder to the current `.Web` assets folder.
 
 ## Directory Setup
