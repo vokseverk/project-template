@@ -2,12 +2,11 @@
   "actions" : {
     "run" : {
       "enabled" : true,
-      "script" : "open \"${CK_FOLDER}\/test\/SpecRunner.html\""
+      "script" : "open \"${CK_FOLDER:-project-template.Frontend}\/test\/SpecRunner.html\""
     }
   },
   "environment" : {
     "CK_FOLDER" : "${Config:com.CodeKitApp.Nova.codekitFolder}",
     "TM_PROJECT_DIRECTORY" : "${WorkspaceFolder}"
-  },
-  "identifier" : "83E866F8-313C-4D20-83D4-4E5E7EE86650"
+  }
 }
