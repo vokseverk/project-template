@@ -4,6 +4,6 @@
 //	referenced below along with various modules beside it.
 //
 
-import inititalize from './modules/app.js'
+import initialize from './modules/app.js'
 
-inititalize()
+initialize()
