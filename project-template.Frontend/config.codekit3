@@ -7,7 +7,7 @@
       "uuidString" : "5CD93953-8419-48F3-B317-31E1D510E58B"
     }
   ],
-  "creatorBuild" : "34518",
+  "creatorBuild" : "34564",
   "files" : {
     "\/build" : {
       "ft" : 65536,
@@ -22,7 +22,7 @@
       "oAP" : "\/build\/icons\/apple-touch-icon.png",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 90,
@@ -43,7 +43,7 @@
       "oAP" : "\/build\/icons\/icon-192.png",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 90,
@@ -56,7 +56,7 @@
       "oAP" : "\/build\/icons\/icon-512.png",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 90,
@@ -90,7 +90,7 @@
     },
     "\/src\/components\/all.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -124,7 +124,7 @@
     },
     "\/src\/components\/placeholder\/placeholder.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -230,7 +230,7 @@
     },
     "\/src\/components\/text\/text.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -247,14 +247,14 @@
       "sU" : 0
     },
     "\/src\/js\/app.module.js" : {
-      "bF" : 4,
+      "bF" : 3,
       "ft" : 64,
       "ma" : 0,
       "mi" : 0,
       "oA" : 0,
       "oAP" : "\/build\/assets\/app.module.js",
       "oF" : 0,
-      "sC" : 0,
+      "sC" : 3,
       "tS" : 0
     },
     "\/src\/js\/app.nomodule.js" : {
@@ -340,7 +340,7 @@
     },
     "\/src\/layouts\/all.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -358,7 +358,7 @@
     },
     "\/src\/layouts\/default.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -376,7 +376,7 @@
     },
     "\/src\/less\/app.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -394,7 +394,7 @@
     },
     "\/src\/less\/basics.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -412,7 +412,7 @@
     },
     "\/src\/less\/constants.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -430,7 +430,7 @@
     },
     "\/src\/less\/flowz.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -448,7 +448,7 @@
     },
     "\/src\/less\/fonts.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -466,7 +466,7 @@
     },
     "\/src\/less\/mixins.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -484,7 +484,7 @@
     },
     "\/src\/less\/reset.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -518,7 +518,7 @@
     },
     "\/src\/panels\/all.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -552,7 +552,7 @@
     },
     "\/src\/panels\/sample-panel\/sample-panel.less" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "co" : 0,
       "eJ" : 0,
       "ft" : 1,
@@ -622,7 +622,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "\/icons\/apple-touch-icon.png",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 700315156.98004997
+    "lastBuiltDate" : 719270922.33984303
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -1448,9 +1448,6 @@
       "no-new-native-nonconstructor" : {
         "active" : 0
       },
-      "no-new-object" : {
-        "active" : 0
-      },
       "no-new-symbol" : {
         "active" : 1
       },
@@ -1462,6 +1459,9 @@
       },
       "no-obj-calls" : {
         "active" : 1
+      },
+      "no-object-constructor" : {
+        "active" : 0
       },
       "no-octal" : {
         "active" : 1
@@ -2000,7 +2000,7 @@
       "purgeCSSStyle" : 0,
       "rewriteURLStyle" : 0,
       "shouldRunAutoprefixer" : 1,
-      "shouldRunBless" : 1,
+      "shouldRunBless" : 0,
       "sourceMapStyle" : 0,
       "strictImports" : 0,
       "strictUnits" : 0
