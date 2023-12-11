@@ -24,8 +24,8 @@ SETTINGS_ROOT="ProjectSettings"
 
 # Configuration variables - these should be supplied on the command line
 
-PROJECT_ROOT="${TM_PROJECT_DIRECTORY}"
-PROJECT_SHORTNAME="${TM_PROJECT_NAME}"
+PROJECT_ROOT="${TM_PROJECT_DIRECTORY:-$1}"
+PROJECT_SHORTNAME="${TM_PROJECT_NAME:-$2}"
 
 DEBUG=yes
 
