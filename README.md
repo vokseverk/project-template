@@ -1,4 +1,4 @@
-# Project Template 2023
+# Project Template 2024
 
 This is our project setup for a website with a separate frontend repository.
 
