@@ -6,7 +6,7 @@ This is our project setup for a website with a separate frontend repository.
 
 - Click the **Use this template** button above to have GitHub create a new repository in your account.
 - Clone the repository down to your machine
-- Rename the `project-template.Frontend` folder to better suit your project (e.g. `movietracker.Frontend` or maybe `secret-website-project.Frontend`?)
+- Rename the `project-template.Frontend` folder to suit your project (e.g. `movietracker.Frontend` or maybe `secret-website-project.Frontend`?)
 - If you're using [Nova][NOVA]:
 	- Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
 	- Choose the `.Frontend` folder in the CodeKit Extension's settings screen
@@ -26,6 +26,13 @@ that, like this:
 ```bash
 $ git clone --origin LIVE https://scm.umbraco.io/euwest01/PROJECT_ALIAS.git PROJECT_NAME.Web
 ```
+
+There's a helper script (`clone.sh`) included for this that can be called like this:
+
+```bash
+$ ./clone.sh PROJECT_ALIAS
+```
+
 
 You can use the *Umbraco > Run* task in Nova to start the cloned site. After you've run the site
 for the first time, grab the port number and put it in the `src/kit/shared/_constants.kit`,
