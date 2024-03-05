@@ -1,22 +1,27 @@
 echo "Building frontend"
 
-# 2. Read the assetsFolder setting from the appsettings.json file
-# 3. Create a new assets/AxBx/ folder in the .Web project
-# 4. Copy the build/assets/ folder from the .Frontend project into the new folder in the .Web project
+# 1. Read the assetsFolder setting from the appsettings.json file
+# 2. Create a new assets/AxBx/ folder in the .Web project
+#    - 1st + 3rd letters are "client-specific", e.g. for client "Star Wars" would be "S_W_".
+#    - 2nd + 4th digits are plain hex versioning (S0W0, S0W1, ... S0WF, S1W0 etc.)
+# 3. Copy the build/assets/ folder from the .Frontend project into the new folder in the .Web project
 
 # Project settings sample to add to the root of appsettings.json:
 # (If you change the root key, change the SETTINGS_ROOT variable below as well)
+#
+# The `version` settings are optional but allows bumping a new version of CSS and/or JS
+# without having to bump all assets as well.
 #
 # "ProjectSettings": {
 # 	"assetsVersion": "A0B0",
 # 	"mainStyleSheet": {
 # 		"name": "app.css",
-# 		"version": "A0B1"
+# 		"version": "v1"
 # 	},
 # 	"mainScriptFile": {
 # 		"moduleFile": "app.module.js",
 # 		"legacyFile": "app.nomodule.js",
-# 		"version": "A0B2"
+# 		"version": "v1"
 # 	}
 # }
 
