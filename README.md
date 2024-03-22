@@ -9,17 +9,21 @@ This is our project setup for a website with a separate frontend repository.
 - [ ] Run the `init.sh` script to rename the `project-template.Frontend` folder same as your project (e.g. if you named the project `movietracker` it'll be named `movietracker.Frontend`)
 
 ### If you're using [Nova][NOVA]:
-	- [ ] Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
-	- [ ] Choose the `.Frontend` folder in the CodeKit Extension's settings screen
+
+- [ ] Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
+- [ ] Choose the `.Frontend` folder in the CodeKit Extension's settings screen
 
 ### If you're using [CodeKit][CK]:
-	- [ ] Rename `$projectName` in `src/kit/shared/_constants.kit`
-	- [ ] Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
+
+- [ ] Rename `$projectName` in `src/kit/shared/_constants.kit`
+- [ ] Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
 
 ### If you're using [TextMate][TM2]:
-	- [ ] Replace `project-template` in the `$TEST_DIR` variable inside the `.tm_properties` file with your new project name
 
-- [ ] Start coding!
+- [ ] Replace `project-template` in the `$TEST_DIR` variable inside the `.tm_properties` file with your new project name
+
+
+*Start coding!*
 
 
 ## Using this with a project on Umbraco Cloud
