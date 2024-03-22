@@ -4,18 +4,22 @@ This is our project setup for a website with a separate frontend repository.
 
 ## Using the template
 
-- Click the **Use this template** button above to have GitHub create a new repository in your account.
-- Clone the repository down to your machine
-- Rename the `project-template.Frontend` folder to suit your project (e.g. `movietracker.Frontend` or maybe `secret-website-project.Frontend`?)
-- If you're using [Nova][NOVA]:
-	- Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
-	- Choose the `.Frontend` folder in the CodeKit Extension's settings screen
-- If you're using [CodeKit][CK]:
-	- Rename `$projectName` in `src/kit/shared/_constants.kit`
-	- Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
-- If you're using [TextMate][TM2]:
-	- Replace `project-template` in the `$TEST_DIR` variable inside the `.tm_properties` file with your new project name
-- Start coding!
+- [ ] Click the **Use this template** button above to have GitHub create a new repository in your account.
+- [ ] Clone the repository down to your machine
+- [ ] Run the `init.sh` script to rename the `project-template.Frontend` folder same as your project (e.g. if you named the project `movietracker` it'll be named `movietracker.Frontend`)
+
+### If you're using [Nova][NOVA]:
+	- [ ] Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
+	- [ ] Choose the `.Frontend` folder in the CodeKit Extension's settings screen
+
+### If you're using [CodeKit][CK]:
+	- [ ] Rename `$projectName` in `src/kit/shared/_constants.kit`
+	- [ ] Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
+
+### If you're using [TextMate][TM2]:
+	- [ ] Replace `project-template` in the `$TEST_DIR` variable inside the `.tm_properties` file with your new project name
+
+- [ ] Start coding!
 
 
 ## Using this with a project on Umbraco Cloud
@@ -40,6 +44,9 @@ replacing the dummy `12345` in the `$portNumber` constant.
 
 The *Frontend > Build* task is for copying the compiled assets etc. from the `.Frontend`
 build folder to the current `.Web` assets folder.
+
+There are corresponding *Run Umbraco site* and *Build and deploy frontend* tasks supplied
+for Visual Studio Code as well.
 
 ## Directory Setup
 
