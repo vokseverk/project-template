@@ -57,13 +57,11 @@ for Visual Studio Code as well.
 > This is done in the `appsettings.json` file under the `Umbraco::CMS` key:
 
 ```json
-{
-	"Umbraco": {
-		"CMS": {
-			"PackageMigration": {
-				"RunSchemaAndContentMigrations": false,
-				"AllowComponentOverrideOfRunSchemaAndContentMigrations": false
-			}
+"Umbraco": {
+	"CMS": {
+		"PackageMigration": {
+			"RunSchemaAndContentMigrations": false,
+			"AllowComponentOverrideOfRunSchemaAndContentMigrations": false
 		}
 	}
 }
