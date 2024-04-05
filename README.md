@@ -41,7 +41,6 @@ There's a helper script (`clone.sh`) included for this that can be called like t
 $ ./clone.sh PROJECT_ALIAS
 ```
 
-
 You can use the *Umbraco > Run* task in Nova to start the cloned site. After you've run the site
 for the first time, grab the port number and put it in the `src/kit/shared/_constants.kit`,
 replacing the dummy `12345` in the `$portNumber` constant.
@@ -51,6 +50,25 @@ build folder to the current `.Web` assets folder.
 
 There are corresponding *Run Umbraco site* and *Build and deploy frontend* tasks supplied
 for Visual Studio Code as well.
+
+> [!IMPORTANT]
+> If the Umbraco site is using [uSkinned SiteBuilder][US] you need to make sure that the package
+> migrations are not executed on subsequent environments or for anyone else cloning the site.
+> This is done in the `appsettings.json` file under the `Umbraco::CMS` key:
+
+```json
+{
+	"Umbraco": {
+		"CMS": {
+			"PackageMigration": {
+				"RunSchemaAndContentMigrations": false,
+				"AllowComponentOverrideOfRunSchemaAndContentMigrations": false
+			}
+		}
+	}
+}
+```
+
 
 ## Directory Setup
 
@@ -185,3 +203,4 @@ sure if it's on par with what we get with CodeKit.)
 [TM2]:  https://macromates.com/
 [ICNS]: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
 [ICNX]: https://www.xiconeditor.com/
+[US]:   https://uskinned.net/
