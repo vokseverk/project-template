@@ -170,6 +170,41 @@ Full page layouts go into the `layouts` folder.
 
 These are part of the vendored [Componentize][CPL] files.
 
+## Webfonts
+
+To use a web font, download the files (preferably `.woff2`) and put them in a `fonts/` folder inside
+`assets/`. Then create a `webfont-fontname.less` file and import it in `fonts.less`, like this:
+
+```text
+[src]
+  ├── [assets]
+  |     └── [fonts]
+  |           └── fluxcap-regular.woff2
+  └── [less]
+        ├── fonts.less
+        └──	webfont-fluxcap.less
+```
+
+```less
+// In "webfont-fluxcap.less":
+@font-face {
+  font-display: swap;
+  font-family: "FluxCap";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/fluxcap-regular.woff2") format("woff2");
+}
+
+// In "fonts.less":
+@import "webfont-fluxcap";
+
+...
+
+.headerFont() {
+	font-family: FluxCap, @sansStack, sans-serif;
+}
+```
+
 ## Build Setup
 
 The template ships with a pre-configured config file for CodeKit but if you're
