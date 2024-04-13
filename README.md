@@ -205,6 +205,8 @@ To use a web font, download the files (preferably `.woff2`) and put them in a `f
 }
 ```
 
+Here's a really neat [tool for grabbing Google Fonts][GWFH] in this manner.
+
 ## Build Setup
 
 The template ships with a pre-configured config file for CodeKit but if you're
@@ -237,3 +239,4 @@ sure if it's on par with what we get with CodeKit.)
 [ICNS]: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
 [ICNX]: https://www.xiconeditor.com/
 [US]:   https://uskinned.net/
+[GWFH]: https://gwfh.mranftl.com/fonts
