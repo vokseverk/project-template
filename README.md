@@ -243,7 +243,7 @@ sure if it's on par with what we get with CodeKit.)
 
 ## Hosting on Curanet
 If you wan't to host on let's say Curanet, you need to create the following secrets on the repository.
-All these can be found in the Curanet dashboard,
+The values for these can be found in the Curanet dashboard,
 `WEBSITE_NAME`
 `SERVER_COMPUTER_NAME`
 `SERVER_USERNAME`
@@ -253,4 +253,6 @@ In the [main-webdeploy.yml](.github/workflows/main-webdeploy.yml) file you also 
 `ProjectName`
 `SolutionName`
 
-Remember to check if the path to the .csproj file, in line 28 is matching your scenario.
+Remember to check if the path to the .csproj file, in `line 28` is matching your scenario.
+
+And remember to write the correct branchename in `line 5`
