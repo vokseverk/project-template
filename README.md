@@ -249,7 +249,7 @@ All these can be found in the Curanet dashboard,
 `SERVER_USERNAME`
 `SERVER_PASSWORD`
 
-In the `.github/workflows/main-webdeploy.yml` file you also need to modify these 2 environment variables:
+In the [main-webdeploy.yml](.github/workflows/main-webdeploy.yml) file you also need to modify these 2 environment variables:
 `ProjectName`
 `SolutionName`
 
