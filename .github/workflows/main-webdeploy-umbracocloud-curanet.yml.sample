@@ -3,7 +3,7 @@ name: Build and deploy project to Curanet
 on:
   workflow_dispatch:
   release:
-    type: [ "published" ]
+    types: [ "published" ]
 
 env:
     ProjectName: '{ProjectName}' # Name of the {ProjectName}.Web folder
