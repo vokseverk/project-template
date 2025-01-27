@@ -7,7 +7,7 @@ on:
 
 env:
     ProjectName: '{ProjectName}' # Name of the {ProjectName}.Web folder
-    SolutionName: '{ProjectName}' # Name of the {SolutionName}.csproj file
+    SolutionName: 'UmbracoProject'
     BuildPlatform: 'win-x86'
     BuildConfiguration: Release
     EnvironmentName: Production
