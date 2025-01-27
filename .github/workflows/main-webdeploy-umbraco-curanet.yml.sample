@@ -2,9 +2,8 @@ name: Build and deploy project to Curanet
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ "rename-this-to-main" ] # Rename this to the branch you want to trigger the build on eg. "main"
-    paths: ['*.Web/**']
+  release:
+    type: [ "published" ]
 
 env:
     ProjectName: '{ProjectName}' # Name of the {ProjectName}.Web folder
