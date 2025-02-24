@@ -1,0 +1,39 @@
+name: Build and deploy project to Curanet
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+env:
+    ProjectName: '{ProjectName}' # Name of the {ProjectName}.Web folder
+    SolutionName: '{SolutionName}' # Name of the {SolutionName}.csproj file
+    BuildPlatform: 'win-x64'
+    BuildConfiguration: Release
+    EnvironmentName: Production
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Create Build Directory
+          run: mkdir _build
+      
+        - name: Build Solution
+          run: | 
+            dotnet build ./${{env.ProjectName}}.Web/${{env.SolutionName}}.csproj --nologo --self-contained --nr:false --p:DeployOnBuild=true --p:DeployDefaultTarget=WebPublish --p:WebPublishMethod=Package --p:PackageAsSingleFile=true --p:DeleteExistingFiles=True --p:SkipInvalidConfigurations=true --p:IncludeSetAclProviderOnDestination=False --p:AutoParameterizationWebConfigConnectionStrings=False --p:platform="${{env.BuildPlatform}}" --p:configuration="${{env.BuildConfiguration}}" --p:PackageLocation="../_build" --p:EnvironmentName=${{env.EnvironmentName}}
+
+        - name: Deploy to Curanet
+          uses: UmbHost/umbhost-web-deploy@v1.0.1
+          with:
+            website-name: ${{secrets.WEBSITE_NAME}}
+            server-computer-name: https://${{secrets.SERVER_COMPUTER_NAME}}:8172/MsDeploy.axd
+            server-username: ${{secrets.SERVER_USERNAME}}
+            server-password: ${{secrets.SERVER_PASSWORD}}
+            source-path: '_build'
+            source-fileName: '${{ env.SolutionName }}.zip'

@@ -1,0 +1,39 @@
+name: Build and deploy project to Simply
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+env:
+    ProjectName: '{ProjectName}' # Name of the {ProjectName}.Web folder
+    SolutionName: 'UmbracoProject'
+    BuildPlatform: 'win-x86'
+    BuildConfiguration: Release
+    EnvironmentName: Production
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: dotnet restore ./${{env.ProjectName}}.Web/src/${{env.SolutionName}}/${{env.SolutionName}}.csproj
+
+      - name: Build
+        run: dotnet build ./${{env.ProjectName}}.Web/src/${{env.SolutionName}}/${{env.SolutionName}}.csproj --configuration ${{env.BuildConfiguration}} --no-restore
+
+      - name: Publish
+        run: dotnet publish ./${{env.ProjectName}}.Web/src/${{env.SolutionName}}/${{env.SolutionName}}.csproj --configuration ${{env.BuildConfiguration}} --output ./publish --runtime ${{env.BuildPlatform}} --self-contained true -p:PublishTrimmed=false -p:PublishSingleFile=true
+
+      - name: Deploy to Simply
+        uses: rasmusbuchholdt/simply-web-deploy@2.1.0
+        with:
+          website-name: ${{ secrets.WEBSITE_NAME }}
+          server-computer-name: https://${{secrets.SERVER_COMPUTER_NAME}}:8172/MsDeploy.axd
+          server-username: ${{ secrets.SERVER_USERNAME }}
+          server-password: ${{ secrets.SERVER_PASSWORD }}
