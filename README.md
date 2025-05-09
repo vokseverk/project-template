@@ -98,7 +98,7 @@ The main Less file is `less/app.less` - it imports all the others and gets
 compiled to `app.css` using _AutoPrefixer_.
 
 The main JavaScript file is the `src/js/modules/app.js` file - you'll find a
-wrappe file in the `js/` directory: `app.module.js`.
+wrapper file in the `src/js/` directory: `app.module.js`.
 It gets processed and bundled into the `build/assets/` folder.
 
 Because it's using [ES Modules][ESM], it should be referenced from HTML like this:
@@ -230,3 +230,5 @@ sure if it's on par with what we get with CodeKit.)
 [ICNX]: https://www.xiconeditor.com/
 [US]:   https://uskinned.net/
 [GWFH]: https://gwfh.mranftl.com/fonts
+[ESM]:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+[PUG]:  https://pugjs.org
