@@ -7,12 +7,18 @@
       "uuidString" : "5CD93953-8419-48F3-B317-31E1D510E58B"
     }
   ],
-  "creatorBuild" : "34576",
+  "creatorBuild" : "34689",
   "files" : {
     "\/build" : {
       "ft" : 65536,
       "oA" : 1,
       "oAP" : "\/build\/build",
+      "oF" : 0
+    },
+    "\/fixtures" : {
+      "ft" : 65536,
+      "oA" : 1,
+      "oAP" : "\/build\/fixtures",
       "oF" : 0
     },
     "\/icons\/apple-touch-icon.png" : {
@@ -257,17 +263,6 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/src\/js\/app.nomodule.js" : {
-      "bF" : 4,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/app.nomodule.js",
-      "oF" : 0,
-      "sC" : 0,
-      "tS" : 1
-    },
     "\/src\/js\/modules\/app.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -289,54 +284,6 @@
       "oF" : 0,
       "sC" : 0,
       "tS" : 0
-    },
-    "\/src\/kit\/dashboard\/index.kit" : {
-      "cB" : 0,
-      "ft" : 2048,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/dashboard\/index.html",
-      "oF" : 0
-    },
-    "\/src\/kit\/index.kit" : {
-      "cB" : 0,
-      "ft" : 2048,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/index.html",
-      "oF" : 0
-    },
-    "\/src\/kit\/shared\/_constants.kit" : {
-      "cB" : 0,
-      "ft" : 2048,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/build\/shared\/_constants.html",
-      "oF" : 0
-    },
-    "\/src\/kit\/shared\/_cpl_nav.kit" : {
-      "cB" : 0,
-      "ft" : 2048,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/build\/shared\/_cpl_nav.html",
-      "oF" : 0
-    },
-    "\/src\/kit\/shared\/_head_content.kit" : {
-      "cB" : 0,
-      "ft" : 2048,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/build\/shared\/_head_content.html",
-      "oF" : 0
-    },
-    "\/src\/kit\/shared\/_script_content.kit" : {
-      "cB" : 0,
-      "ft" : 2048,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/build\/shared\/_script_content.html",
-      "oF" : 0
     },
     "\/src\/layouts\/all.less" : {
       "aP" : 1,
@@ -568,6 +515,54 @@
       "sI" : 0,
       "sU" : 0
     },
+    "\/src\/public\/dashboard\/index.kit" : {
+      "cB" : 0,
+      "ft" : 2048,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/dashboard\/index.html",
+      "oF" : 0
+    },
+    "\/src\/public\/index.kit" : {
+      "cB" : 0,
+      "ft" : 2048,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/index.html",
+      "oF" : 0
+    },
+    "\/src\/public\/shared\/_constants.kit" : {
+      "cB" : 0,
+      "ft" : 2048,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/shared\/_constants.html",
+      "oF" : 0
+    },
+    "\/src\/public\/shared\/_cpl_nav.kit" : {
+      "cB" : 0,
+      "ft" : 2048,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/shared\/_cpl_nav.html",
+      "oF" : 0
+    },
+    "\/src\/public\/shared\/_head_content.kit" : {
+      "cB" : 0,
+      "ft" : 2048,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/shared\/_head_content.html",
+      "oF" : 0
+    },
+    "\/src\/public\/shared\/_script_content.kit" : {
+      "cB" : 0,
+      "ft" : 2048,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/shared\/_script_content.html",
+      "oF" : 0
+    },
     "\/test" : {
       "ft" : 65536,
       "oA" : 1,
@@ -622,7 +617,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "\/icons\/apple-touch-icon.png",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 719270922.33984303
+    "lastBuiltDate" : 768475670.428298
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -920,8 +915,6 @@
     "buildFolderActive" : 1,
     "buildFolderName" : "build",
     "cleanBuild" : 1,
-    "cssoForceMediaMerge" : 0,
-    "cssoRestructure" : 1,
     "environmentVariableEntries" : [
       "NODE_ENV:::production"
     ],
@@ -1122,10 +1115,6 @@
         "active" : 0,
         "optionString" : "{'before': true, 'after': true, 'overrides': {}}"
       },
-      "line-comment-position" : {
-        "active" : 0,
-        "optionString" : "{'position': 'above'}"
-      },
       "linebreak-style" : {
         "active" : 0,
         "optionString" : "'unix'"
@@ -1177,10 +1166,6 @@
       "max-statements-per-line" : {
         "active" : 0,
         "optionString" : "{'max': 1}"
-      },
-      "multiline-comment-style" : {
-        "active" : 0,
-        "optionString" : "'starred-block'"
       },
       "multiline-ternary" : {
         "active" : 0,
@@ -1323,7 +1308,8 @@
         "active" : 0
       },
       "no-extra-boolean-cast" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'enforceForInnerExpressions': false}"
       },
       "no-extra-label" : {
         "active" : 0
@@ -1408,7 +1394,8 @@
         "optionString" : "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
       },
       "no-misleading-character-class" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : "{'allowEscape': false}"
       },
       "no-mixed-operators" : {
         "active" : 0,
@@ -1776,7 +1763,8 @@
         "active" : 0
       },
       "require-unicode-regexp" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : "{'requireFlag': 'u'}"
       },
       "require-yield" : {
         "active" : 1
@@ -1979,7 +1967,7 @@
       "autoOutputAction" : 0,
       "autoOutputPathFilenamePattern" : "*.html",
       "autoOutputPathRelativePath" : "",
-      "autoOutputPathReplace1" : "kit",
+      "autoOutputPathReplace1" : "public",
       "autoOutputPathReplace2" : "",
       "autoOutputPathStyle" : 3,
       "htmlMinifierStyle" : 0,
@@ -2052,9 +2040,9 @@
       "autoOutputAction" : 0,
       "autoOutputPathFilenamePattern" : "*.html",
       "autoOutputPathRelativePath" : "",
-      "autoOutputPathReplace1" : "",
+      "autoOutputPathReplace1" : "public",
       "autoOutputPathReplace2" : "",
-      "autoOutputPathStyle" : 0,
+      "autoOutputPathStyle" : 3,
       "compileDebug" : 1,
       "htmlMinifierStyle" : 0,
       "outputStyle" : 0,
@@ -2067,11 +2055,9 @@
       "autoOutputPathReplace1" : "sass",
       "autoOutputPathReplace2" : "css",
       "autoOutputPathStyle" : 2,
-      "compilerType" : 1,
       "cssoStyle" : 0,
-      "decimalPrecision" : 10,
       "emitCharset" : 1,
-      "outputStyle" : 0,
+      "outputStyle" : 1,
       "purgeCSSStyle" : 0,
       "shouldRunAutoprefixer" : 1,
       "shouldRunBless" : 1,
@@ -2207,7 +2193,8 @@
     ],
     "rollupTreeshakingEnabled" : 1,
     "rollupTreeshakingModuleSideEffects" : 1,
-    "skippedFoldersString" : "\/websiteicons,\/storage\/framework\/sessions,node_modules,_logs,logs,log,.idea,_cache,cache,\/test",
+    "sassWarningStyle" : 1,
+    "skippedFoldersString" : "node_modules,_logs,\/test,cache,\/fixtures,\/storage\/framework\/sessions,logs,log,.idea,_cache,\/websiteicons",
     "sourceFolderName" : "src",
     "susyVersion" : 3,
     "tsAllowArbitraryExtensions" : 0,
@@ -2227,6 +2214,7 @@
     "tsImportHelpers" : 0,
     "tsIsolatedModules" : 0,
     "tsJSXFactory" : "React.createElement",
+    "tsJSXFragmentFactory" : "Fragment",
     "tsNoEmitHelpers" : 0,
     "tsNoFallthroughCasesInSwitch" : 0,
     "tsNoImplicitAny" : 0,

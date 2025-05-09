@@ -1,4 +1,4 @@
-# Project Template 2024
+# Project Template 2025
 
 This is our project setup for a website with a separate frontend repository.
 
@@ -15,13 +15,8 @@ This is our project setup for a website with a separate frontend repository.
 
 ### If you're using [CodeKit][CK]:
 
-- [ ] Rename `$projectName` in `src/kit/shared/_constants.kit`
+- [ ] Rename `$projectName` in `src/public/shared/_constants.kit`
 - [ ] Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
-
-### If you're using [TextMate][TM2]:
-
-- [ ] Replace `project-template` in the `$TEST_DIR` variable inside the `.tm_properties` file with your new project name
-
 
 *Start coding!*
 
@@ -42,7 +37,7 @@ $ ./clone.sh PROJECT_ALIAS
 ```
 
 You can use the *Umbraco > Run* task in Nova to start the cloned site. After you've run the site
-for the first time, grab the port number and put it in the `src/kit/shared/_constants.kit`,
+for the first time, grab the port number and put it in the `src/public/shared/_constants.kit`,
 replacing the dummy `12345` in the `$portNumber` constant.
 
 The *Frontend > Build* task is for copying the compiled assets etc. from the `.Frontend`
@@ -74,16 +69,17 @@ The folder structure inside `.Frontend` looks like this:
 
 ```text
 [build]
+[fixtures]
 [icons]
 [src]
   ├── [assets]
   ├── [components]
   ├── [js]
-  ├── [kit]
   ├── [layouts]
   ├── [less]
   ├── [media]
-  └── [panels]
+  ├── [panels]
+  └── [public]
 [test]
 [vendor]
 ```
@@ -101,23 +97,17 @@ These are source files that compile into the
 The main Less file is `less/app.less` - it imports all the others and gets
 compiled to `app.css` using _AutoPrefixer_.
 
-The main JavaScript file is the `js/modules/app.js` file - you'll find two
-wrapper files in the `js/` directory: `app.module.js` and `app.nomodule.js`.
-They both get processed and compiled into the `build/assets/` folder.
-The `module.js` file only gets bundled, while the `nomodule.js` file is transpiled with Babel first and then bundled.
+The main JavaScript file is the `src/js/modules/app.js` file - you'll find a
+wrappe file in the `js/` directory: `app.module.js`.
+It gets processed and bundled into the `build/assets/` folder.
 
-Both files are referenced from the HTML - in this way:
+Because it's using [ES Modules][ESM], it should be referenced from HTML like this:
 
 ```html
 <script type="module" src="/assets/app.module.js"></script>
-<script nomodule defer src="/assets/app.nomodule.js"></script>
 ```
 
-These are mutually exclusive since browsers that support the newer JavaScript
-modules syntax will load the first one and ignore the second (due to the
-`nomodule` attribute) while browsers that don't understand modules won't load
-the first one because of the `type="module"` attribute, but gladly load the
-second.
+(This is done in the `src/public/shared/_script_content.kit` file already)
 
 ### icons
 
@@ -136,17 +126,17 @@ The project template comes with [Jasmine][JAS] testing pre-configured. Open the
 `SpecRunner.html` file in a browser (in Nova there should be a "Test" task available)
 to run the tests. There's a sample spec file in the `spec` folder for you to look at.
 
-### kit
+### public
 
-The files in here are [Kit files][KIT] which compile to regular HTML files in
+The files in here are [Kit][KIT] or [Pug][PUG] files which compile to regular HTML files in
 the `build` folder, maintaining their file structure, e.g.:
 
 
-| Source file                   | Build file                   |
-|-------------------------------|------------------------------|
-| src/kit/**index**.kit         | build/**index**.html         |
-| src/kit/about/**index**.kit   | build/about/**index**.html   |
-| src/kit/projects/**free**.kit | build/projects/**free**.html |
+| Source file                      | Build file                   |
+|----------------------------------|------------------------------|
+| src/public/**index**.kit         | build/**index**.html         |
+| src/public/about/**index**.kit   | build/about/**index**.html   |
+| src/public/projects/**free**.pug | build/projects/**free**.html |
 
 
 ### assets & media

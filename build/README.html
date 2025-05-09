@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="projecttemplate2025">Project Template 2025</h1>
+
+<p>This is our project setup for a website with a separate frontend repository.</p>
+
+<h2 id="usingthetemplate">Using the template</h2>
+
+<ul>
+<li>[ ] Click the <strong>Use this template</strong> button above to have GitHub create a new repository in your account.</li>
+<li>[ ] Clone the repository down to your machine</li>
+<li>[ ] Run the <code>init.sh</code> script to rename the <code>project-template.Frontend</code> folder same as your project (e.g. if you named the project <code>movietracker</code> it&#8217;ll be named <code>movietracker.Frontend</code>)</li>
+</ul>
+
+<h3 id="ifyoureusingnovanova:">If you&#8217;re using <a href="https://nova.app/">Nova</a>:</h3>
+
+<ul>
+<li>[ ] Rename the <code>workspace.name</code> keys in the <code>.nova/Configuration.json</code> file to suit your project</li>
+<li>[ ] Choose the <code>.Frontend</code> folder in the CodeKit Extension&#8217;s settings screen</li>
+</ul>
+
+<h3 id="ifyoureusingcodekitck:">If you&#8217;re using <a href="https://codekitapp.com/">CodeKit</a>:</h3>
+
+<ul>
+<li>[ ] Rename <code>$projectName</code> in <code>src/public/shared/_constants.kit</code></li>
+<li>[ ] Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings</li>
+</ul>
+
+<p><em>Start coding!</em></p>
+
+<h2 id="usingthiswithaprojectonumbracocloud">Using this with a project on Umbraco Cloud</h2>
+
+<p>This repository is already set to ignore a <code>*.Web</code> folder, so clone your cloud project into
+that, like this:</p>
+
+<pre><code class="bash">$ git clone --origin LIVE https://scm.umbraco.io/euwest01/PROJECT_ALIAS.git PROJECT_NAME.Web
+</code></pre>
+
+<p>There&#8217;s a helper script (<code>clone.sh</code>) included for this that can be called like this:</p>
+
+<pre><code class="bash">$ ./clone.sh PROJECT_ALIAS
+</code></pre>
+
+<p>You can use the <em>Umbraco &gt; Run</em> task in Nova to start the cloned site. After you&#8217;ve run the site
+for the first time, grab the port number and put it in the <code>src/public/shared/_constants.kit</code>,
+replacing the dummy <code>12345</code> in the <code>$portNumber</code> constant.</p>
+
+<p>The <em>Frontend &gt; Build</em> task is for copying the compiled assets etc. from the <code>.Frontend</code>
+build folder to the current <code>.Web</code> assets folder.</p>
+
+<p>There are corresponding <em>Run Umbraco site</em> and <em>Build and deploy frontend</em> tasks supplied
+for Visual Studio Code as well.</p>
+
+<blockquote>
+<p>[!IMPORTANT]
+If the Umbraco site is using <a href="https://uskinned.net/">uSkinned SiteBuilder</a> you need to make sure that the package
+migrations are not executed on subsequent environments or for anyone else cloning the site.
+This is done in the <code>appsettings.json</code> file under the <code>Umbraco::CMS</code> key:</p>
+</blockquote>
+
+<pre><code class="json">&quot;Umbraco&quot;: {
+	&quot;CMS&quot;: {
+		&quot;PackageMigration&quot;: {
+			&quot;RunSchemaAndContentMigrations&quot;: false,
+			&quot;AllowComponentOverrideOfRunSchemaAndContentMigrations&quot;: false
+		}
+	}
+}
+</code></pre>
+
+<h2 id="directorysetup">Directory Setup</h2>
+
+<p>The folder structure inside <code>.Frontend</code> looks like this:</p>
+
+<pre><code class="text">[build]
+[fixtures]
+[icons]
+[src]
+  ├── [assets]
+  ├── [components]
+  ├── [js]
+  ├── [layouts]
+  ├── [less]
+  ├── [media]
+  ├── [panels]
+  └── [public]
+[test]
+[vendor]
+</code></pre>
+
+<h3 id="buildvendor">build &amp; vendor</h3>
+
+<p>The <code>build</code> folder should be automatically built; more on that in a sec&#8230;
+The <code>vendor</code> folder contains external modules, libraries and/or frameworks that are used in the frontend code.</p>
+
+<h3 id="srcjssrcless">src/js &amp; src/less</h3>
+
+<p>These are source files that compile into the
+<code>build/assets</code> folder as <code>.js</code> &amp; <code>.css</code> files, side by side.</p>
+
+<p>The main Less file is <code>less/app.less</code> - it imports all the others and gets
+compiled to <code>app.css</code> using <em>AutoPrefixer</em>.</p>
+
+<p>The main JavaScript file is the <code>js/modules/app.js</code> file - you&#8217;ll find a
+wrappe file in the <code>js/</code> directory: <code>app.module.js</code>.
+It gets processed and bundled into the <code>build/assets/</code> folder.</p>
+
+<p>Because it&#8217;s using [ES Modules][ESM], it should be referenced from HTML like this:</p>
+
+<pre><code class="html">&lt;script type=&quot;module&quot; src=&quot;/assets/app.module.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>(This is done in the <code>public/shared/_script_content.kit</code> file already)</p>
+
+<h3 id="icons">icons</h3>
+
+<p>The <code>icons</code> folder holds <a href="https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs">the bare minimum</a> to supply the website with a working favicon etc.
+You should modify them all like this:</p>
+
+<ul>
+<li>[ ] Modify the <code>icon.svg</code> file (keep it square)</li>
+<li>[ ] Export (or modify) the 512×512 PNG (<code>icon-512.png</code>)</li>
+<li>[ ] Export the 192×192 &amp; 180×180 (<code>apple-touch-icon.png</code>) versions from that</li>
+<li>[ ] Use <a href="https://www.xiconeditor.com/">X-Icon Editor</a> to create the <code>favicon.ico</code> file by importing and tweaking there</li>
+<li>[ ] Replace <code>project-template</code> in the <code>icons/manifest.webmanifest</code> file with your project name</li>
+</ul>
+
+<h3 id="test">test</h3>
+
+<p>The project template comes with <a href="https://jasmine.github.io/">Jasmine</a> testing pre-configured. Open the
+<code>SpecRunner.html</code> file in a browser (in Nova there should be a &#8220;Test&#8221; task available)
+to run the tests. There&#8217;s a sample spec file in the <code>spec</code> folder for you to look at.</p>
+
+<h3 id="public">public</h3>
+
+<p>The files in here are <a href="https://codekitapp.com/help/kit/">Kit</a> or [Pug][PUG] files which compile to regular HTML files in
+the <code>build</code> folder, maintaining their file structure, e.g.:</p>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Source file      </th>
+	<th> Build file     </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> src/public/<strong>index</strong>.kit   </td>
+	<td> build/<strong>index</strong>.html   </td>
+</tr>
+<tr>
+	<td> src/public/about/<strong>index</strong>.kit </td>
+	<td> build/about/<strong>index</strong>.html </td>
+</tr>
+<tr>
+	<td> src/public/projects/<strong>free</strong>.pug </td>
+	<td> build/projects/<strong>free</strong>.html </td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="assetsmedia">assets &amp; media</h3>
+
+<p>These hold images, icons &amp; maybe webfonts for use in the site; they should get
+copied to the build folder (in <code>build/assets</code> and <code>build/media</code>
+respectively).</p>
+
+<p>Files in <code>assets</code> are for icons, images &amp; fonts, while <code>media</code> is meant
+for images that would ideally come from a CMS or similar.</p>
+
+<h3 id="componentspanelslayouts">components, panels &amp; layouts</h3>
+
+<p>The <code>components</code> folder should contain individual components of the site, like
+buttons, cards etc.</p>
+
+<p>Larger elements that wraps a couple (or a list) of elements gets to go into the
+<code>panels</code> folder.</p>
+
+<p>Full page layouts go into the <code>layouts</code> folder.</p>
+
+<p>These are part of the vendored <a href="https://github.com/greystate/componentize/">Componentize</a> files.</p>
+
+<h2 id="webfonts">Webfonts</h2>
+
+<p>To use a web font, download the files (preferably <code>.woff2</code>) and put them in a <code>fonts/</code> folder inside
+<code>assets/</code>. Then create a <code>webfont-fontname.less</code> file and import it in <code>fonts.less</code>, like this:</p>
+
+<pre><code class="text">[src]
+  ├── [assets]
+  |     └── [fonts]
+  |           └── fluxcap-regular.woff2
+  └── [less]
+        ├── fonts.less
+        └──	webfont-fluxcap.less
+</code></pre>
+
+<pre><code class="less">// In &quot;webfont-fluxcap.less&quot;:
+@font-face {
+  font-display: swap;
+  font-family: &quot;FluxCap&quot;;
+  font-style: normal;
+  font-weight: 400;
+  src: url(&quot;fonts/fluxcap-regular.woff2&quot;) format(&quot;woff2&quot;);
+}
+
+// In &quot;fonts.less&quot;:
+@import &quot;webfont-fluxcap&quot;;
+
+...
+
+.headerFont() {
+	font-family: FluxCap, @sansStack, sans-serif;
+}
+</code></pre>
+
+<p>Here&#8217;s a really neat <a href="https://gwfh.mranftl.com/fonts">tool for grabbing Google Fonts</a> in this manner.</p>
+
+<h2 id="buildsetup">Build Setup</h2>
+
+<p>The template ships with a pre-configured config file for CodeKit but if you&#8217;re
+more comfortable with <strong>webpack</strong> or similar, here&#8217;s what&#8217;s being done:</p>
+
+<ul>
+<li>JavaScript, Less and assets are built into a <code>/build/assets/</code> folder in the root of the project</li>
+<li>Files in <code>media</code> are copied into <code>/build/media/</code></li>
+<li>Kit files are processed and compiled as described earlier to end up as HTML files in the root and maybe some subfolders</li>
+</ul>
+
+<h3 id="codekitmacos">CodeKit (macOS)</h3>
+
+<p><a href="https://codekitapp.com/">CodeKit</a> should pick up all settings from the <code>config.codekit3</code> file when you drag the <strong>project-template.Frontend</strong> folder onto the CodeKit window.
+CodeKit even has a <a href="https://codekitapp.com/help/read-only/">Read-Only Mode</a> that allows for using the app without a license. You just can&#8217;t change any of the settings.</p>
+
+<h3 id="windowslinux">Windows/Linux</h3>
+
+<p>If you&#8217;re on Windows or Linux, you could have a look at the <a href="https://prepros.io/">Prepros</a> app
+for compiling the assets. (It&#8217;s been a while since I&#8217;ve tried it so I&#8217;m not
+sure if it&#8217;s on par with what we get with CodeKit.)</p>
+
+</body>
+</html>
+
