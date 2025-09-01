@@ -44,7 +44,7 @@ fi
 UMB_DIR="${PROJECT_ROOT}/${PROJECT_SHORTNAME}.Web" # The Web site's root
 FRONTEND_DIR="${PROJECT_ROOT}/${PROJECT_SHORTNAME}.Frontend" # The frontend files
 
-SETTINGS_FILE="${UMB_DIR}/src/UmbracoProject/appsettings.json"
+SETTINGS_FILE="${UMB_DIR}/UmbracoProject/appsettings.json"
 
 # Get current asset versions from appsettings.json
 ASSETS_VERSION=`jq -r '.'"${SETTINGS_ROOT}"'.assetsVersion' ${SETTINGS_FILE}`
@@ -79,7 +79,7 @@ else
 	JS_LEGACY_FILENAME="${JS_LEGACY_BASENAME}.${JS_VERSION}.js"
 fi
 
-DEPLOY_DIR=$UMB_DIR/src/UmbracoProject/wwwroot/assets/$ASSETS_VERSION
+DEPLOY_DIR=$UMB_DIR/UmbracoProject/wwwroot/assets/$ASSETS_VERSION
 
 BUILD_DIR="${FRONTEND_DIR}/build"
 

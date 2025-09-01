@@ -8,6 +8,10 @@ This is our project setup for a website with a separate frontend repository.
 - [ ] Clone the repository down to your machine
 - [ ] Run the `init.sh` script to rename the `project-template.Frontend` folder same as your project (e.g. if you named the project `movietracker` it'll be named `movietracker.Frontend`)
 
+### If you need an Umbraco site
+
+- [ ] Run the `create-umbraco.sh` script to create a new site in the .Web folder
+
 ### If you're using [Nova][NOVA]:
 
 - [ ] Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
@@ -18,23 +22,8 @@ This is our project setup for a website with a separate frontend repository.
 - [ ] Rename `$projectName` in `src/public/shared/_constants.kit`
 - [ ] Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
 
+
 *Start coding!*
-
-
-## Using this with a project on Umbraco Cloud
-
-This repository is already set to ignore a `*.Web` folder, so clone your cloud project into
-that, like this:
-
-```bash
-$ git clone --origin LIVE https://scm.umbraco.io/euwest01/PROJECT_ALIAS.git PROJECT_NAME.Web
-```
-
-There's a helper script (`clone.sh`) included for this that can be called like this:
-
-```bash
-$ ./clone.sh PROJECT_ALIAS
-```
 
 You can use the *Umbraco > Run* task in Nova to start the cloned site. After you've run the site
 for the first time, grab the port number and put it in the `src/public/shared/_constants.kit`,
@@ -128,7 +117,7 @@ to run the tests. There's a sample spec file in the `spec` folder for you to loo
 
 ### public
 
-The files in here are [Kit][KIT] or [Pug][PUG] files which compile to regular HTML files in
+The files in here are [Kit][KIT] and/or [Pug][PUG] files which compile to regular HTML files in
 the `build` folder, maintaining their file structure, e.g.:
 
 
@@ -195,7 +184,7 @@ To use a web font, download the files (preferably `.woff2`) and put them in a `f
 }
 ```
 
-Here's a really neat [tool for grabbing Google Fonts][GWFH] in this manner.
+There's a really neat [tool for grabbing Google Fonts][GWFH] in this manner.
 
 ## Build Setup
 
@@ -204,7 +193,7 @@ more comfortable with **webpack** or similar, here's what's being done:
 
 - JavaScript, Less and assets are built into a `/build/assets/` folder in the root of the project
 - Files in `media` are copied into `/build/media/`
-- Kit files are processed and compiled as described earlier to end up as HTML files in the root and maybe some subfolders
+- Kit and Pug files are processed and compiled as described earlier to end up as HTML files in the root and maybe some subfolders
 
 ### CodeKit (macOS)
 
