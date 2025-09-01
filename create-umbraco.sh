@@ -4,8 +4,8 @@ PROJECT_NAME=`basename "$CURRENT_DIR"`
 if [ -e "${PROJECT_NAME}.Web" ]; then
 	read -p "Enter password for the admin user (min. 10 chars): " PASSWORD
 
-	if [ "$PASSWORD" == "" ]; then
-		end 0
+	if [[ $PASSWORD == "" ]]; then
+		exit 1
 	else
 
 		dotnet new install Umbraco.Templates --force
