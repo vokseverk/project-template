@@ -1,6 +1,6 @@
-# Project Template 2025
+# Project Template 2026
 
-This is our project setup for a website with a separate frontend repository.
+This is the project setup for a website with a separate frontend repository.
 
 ## Using the template
 
