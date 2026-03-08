@@ -8,10 +8,6 @@ This is the project setup for a website with a separate frontend repository.
 - [ ] Clone the repository down to your machine
 - [ ] Run the `init.sh` script to rename the `project-template.Frontend` folder same as your project (e.g. if you named the project `movietracker` it'll be named `movietracker.Frontend`)
 
-### If you need an Umbraco site
-
-- [ ] Run the `create-umbraco.sh` script to create a new site in the .Web folder
-
 ### If you're using [Nova][NOVA]:
 
 - [ ] Rename the `workspace.name` keys in the `.nova/Configuration.json` file to suit your project
@@ -22,12 +18,15 @@ This is the project setup for a website with a separate frontend repository.
 - [ ] Rename `$projectName` in `src/public/shared/_constants.kit`
 - [ ] Drag the newly renamed frontend folder onto CodeKit for it to pickup the settings
 
+### If you need an Umbraco site
 
-*Start coding!*
+- [ ] Run the `create-umbraco.sh` script to create a new site in the .Web folder
 
-You can use the *Umbraco > Run* task in Nova to start the cloned site. After you've run the site
-for the first time, grab the port number and put it in the `src/public/shared/_constants.kit`,
-replacing the dummy `12345` in the `$portNumber` constant.
+### Start coding!
+
+If you've created an Umbraco site, you can use the *Umbraco > Run* task in Nova to start it.
+After you've run the site for the first time, grab the port number and put it in the
+`src/public/shared/_constants.kit`, replacing the dummy `12345` in the `$portNumber` constant.
 
 The *Frontend > Build* task is for copying the compiled assets etc. from the `.Frontend`
 build folder to the current `.Web` assets folder.
@@ -35,24 +34,30 @@ build folder to the current `.Web` assets folder.
 There are corresponding *Run Umbraco site* and *Build and deploy frontend* tasks supplied
 for Visual Studio Code as well.
 
-> [!IMPORTANT]
-> If the Umbraco site is using [uSkinned SiteBuilder][US] you need to make sure that the package
-> migrations are not executed on subsequent environments or for anyone else cloning the site.
-> This is done in the `appsettings.json` file under the `Umbraco::CMS` key:
-
-```json
-"Umbraco": {
-	"CMS": {
-		"PackageMigration": {
-			"RunSchemaAndContentMigrations": false,
-			"AllowComponentOverrideOfRunSchemaAndContentMigrations": false
+<details>
+	<summary><strong>If you're using uSkinned SiteBuilder</strong></summary>
+	<div class="markdown-alert markdown-alert-important" dir="auto">
+		<p class="markdown-alert-title" dir="auto"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
+		<p dir="auto">
+			If the Umbraco site is using <a href="https://uskinned.net/" rel="nofollow">uSkinned SiteBuilder</a> you need to make sure that the package
+			migrations are not executed on subsequent environments or for anyone else cloning the site.
+			This is done in the <code>appsettings.json</code> file under the <code>Umbraco::CMS</code> key:
+		</p>
+	</div>
+	<pre><code class="lang-json">
+	"Umbraco": {
+		"CMS": {
+			"PackageMigration": {
+				"RunSchemaAndContentMigrations": false,
+				"AllowComponentOverrideOfRunSchemaAndContentMigrations": false
+			}
 		}
 	}
-}
-```
+	</code></pre>
+</details>
 
 
-## Directory Setup
+## Frontend Directory Setup
 
 The folder structure inside `.Frontend` looks like this:
 
