@@ -10,7 +10,7 @@ if [ -e "${PROJECT_NAME}.Web" ]; then
 	if [[ $PASSWORD == "" ]]; then
 		exit 1
 	else
-		dotnet new install Umbraco.Templates::13.10.0 --force
+		dotnet new install Umbraco.Templates --force
 
 		dotnet new umbraco --force -n "UmbracoProject" --friendly-name "Administrator" --email "umbracoadmin@vokseverk.dk" --password "${PASSWORD}" --development-database-type SQLite
 
