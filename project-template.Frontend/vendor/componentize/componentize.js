@@ -207,6 +207,13 @@
 			return this.getAttribute('modifiers')?.split(',') ?? [ ]
 		}
 
+		get initialSize() {
+			const sizeAttr = this.getAttribute('size') ?? 100;
+			if (sizeAttr == 'half') { return 50 }
+			if (sizeAttr == 'third') { return 35 }
+			return sizeAttr
+		}
+
 		get sizeController() {
 			return this.querySelector('#size-controller')
 		}
@@ -232,7 +239,7 @@
 			--component-border-color: rgba(0 0 0 / 10%);
 			--component-solid-bg-color: rgba(80, 80, 80);
 			--controls-opacity: 0.1;
-			--component-size: 100;
+			--component-size: ${this.initialSize};
 
 			transition: border-color 200ms ease-in;
 			display: flex;
@@ -243,7 +250,6 @@
 			margin-block: 4rem;
 			border-radius: 8px;
 			overflow: clip;
-			background: rgba(0 0 0 / 5%);
 		}
 
 		:host(:hover),
@@ -252,14 +258,14 @@
 			--controls-opacity: 1;
 		}
 
-		.component {
-			background: white;
-		}
+		:host([zoomed]) .component { font-size: 200%; }
 
-		::slotted(*) {
+		.component {
 			box-sizing: border-box;
 			inline-size: calc(var(--component-size, 100) * 1%);
 		}
+
+		::slotted(*) { }
 
 		:host([background="transparent"]) .component {
 			transition: background-color 0.5s linear;
@@ -273,13 +279,24 @@
 		}
 
 		:host([background="solid"]) .component {
+			padding: 25px;
 			background: var(--component-solid-bg-color);
 		}
 
 		header {
 			display: flex;
 			justify-content: space-between;
+			gap: 2em;
+			align-items: center;
 			padding-inline: 1rem;
+		}
+
+		.zoomer {
+			font-family: monospace;
+			display: flex;
+			align-items: center;
+			gap: 0.3em;
+			margin-inline-start: auto;
 		}
 
 		h2 {
@@ -291,7 +308,7 @@
 		}
 
 		.controls label { cursor: pointer; }
-		.controls, .component {
+		.controls, .component-wrapper {
 			transition: border-color 200ms ease-in;
 			border-block-start: 2px solid var(--component-border-color, black);
 			padding: 1rem;
@@ -307,8 +324,8 @@
 
 		get template() {
 			const templateElement = document.createElement('template');
-			let html = `<header><h2 class="title">${this.name}</h2><input id="size-controller" class="sizer" type="range" min="25" max"100" value="100" step="25"></header>`;
-				html += `<article class="component"><slot></slot></article>`;
+			let html = `<header><h2 class="title">${this.name}</h2><label class="zoomer" for="zoom-toggle">2× <input id="zoom-toggle" type="checkbox" switch></label><input id="size-controller" class="sizer" type="range" min="25" max"100" value="${this.initialSize}" step="5"></header>`;
+				html += `<section class="component-wrapper"><article class="component"><slot></slot></article></section>`;
 			if (this.modifiers.length || this.states.length) {
 				html += `<section class="controls"><fieldset><legend>States & modifiers</legend>`;
 				html += this.modifiers.length > 0 ? `<state-controller for="${this.id}" states="${this.modifiers.join(',')}" selected="${this.selectedModifiers}" is-multiple></state-controller>` : '';
@@ -352,7 +369,17 @@
 		}
 
 		if (header != null) {
-			header.addEventListener('mousemove', (event) => {
+			const zoomer = header.querySelector('.zoomer [type="checkbox"]');
+			zoomer.addEventListener('change', (event) => {
+				if (event.target.checked) {
+					element.setAttribute('zoomed', '');
+				} else {
+					element.removeAttribute('zoomed');
+				}
+			});
+
+			const slider = header.querySelector('input.sizer');
+			slider.addEventListener('input', (event) => {
 				if (event.target.type === 'range') {
 					const value = event.target.value;
 					element.style.setProperty('--component-size', value);
