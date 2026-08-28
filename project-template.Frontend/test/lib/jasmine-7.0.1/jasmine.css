@@ -8,7 +8,7 @@ body {
   background-color: #eee;
   padding: 5px;
   margin: -8px;
-  font-size: 11px;
+  font-size: 12px;
   font-family: Monaco, "Lucida Console", monospace;
   line-height: 14px;
   color: #333;
@@ -24,7 +24,6 @@ body {
   line-height: 14px;
 }
 .jasmine_html-reporter .jasmine-banner,
-.jasmine_html-reporter .jasmine-symbol-summary,
 .jasmine_html-reporter .jasmine-summary,
 .jasmine_html-reporter .jasmine-result-message,
 .jasmine_html-reporter .jasmine-spec .jasmine-description,
@@ -63,57 +62,24 @@ body {
   float: right;
   line-height: 28px;
   padding-right: 9px;
+  font-size: 12px;
 }
-.jasmine_html-reporter .jasmine-symbol-summary {
-  overflow: hidden;
-  margin: 14px 0;
+.jasmine_html-reporter progress {
+  width: 100%;
 }
-.jasmine_html-reporter .jasmine-symbol-summary li {
-  display: inline-block;
-  height: 10px;
-  width: 14px;
-  font-size: 16px;
+.jasmine_html-reporter progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-passed {
-  font-size: 14px;
+.jasmine_html-reporter progress[value]::-webkit-progress-value, .jasmine_html-reporter progress[value]::-moz-progress-bar {
+  background: #007069;
 }
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-passed:before {
-  color: #007069;
-  content: "•";
+.failed .jasmine_html-reporter progress[value]::-webkit-progress-value, .failed .jasmine_html-reporter progress[value]::-moz-progress-bar {
+  background: #ca3a11;
 }
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-failed {
-  line-height: 9px;
-}
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-failed:before {
-  color: #ca3a11;
-  content: "×";
-  font-weight: bold;
-  margin-left: -1px;
-}
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-excluded {
-  font-size: 14px;
-}
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-excluded:before {
-  color: #bababa;
-  content: "•";
-}
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-excluded-no-display {
-  font-size: 14px;
-  display: none;
-}
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-pending {
-  line-height: 17px;
-}
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-pending:before {
-  color: #ba9d37;
-  content: "*";
-}
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-empty {
-  font-size: 14px;
-}
-.jasmine_html-reporter .jasmine-symbol-summary li.jasmine-empty:before {
-  color: #ba9d37;
-  content: "•";
+.jasmine_html-reporter progress.failed[value]::-webkit-progress-value, .jasmine_html-reporter progress.failed[value]::-moz-progress-bar {
+  background: #ca3a11;
 }
 .jasmine_html-reporter .jasmine-run-options {
   float: right;
@@ -145,8 +111,12 @@ body {
   display: block;
   color: #eee;
 }
+.jasmine_html-reporter .jasmine-bar.jasmine-in-progress {
+  color: #333;
+}
 .jasmine_html-reporter .jasmine-bar.jasmine-failed, .jasmine_html-reporter .jasmine-bar.jasmine-errored {
   background-color: #ca3a11;
+  color: #eee;
   border-bottom: 1px solid #eee;
 }
 .jasmine_html-reporter .jasmine-bar.jasmine-passed {
@@ -175,12 +145,16 @@ body {
 .jasmine_html-reporter .jasmine-bar a {
   color: white;
 }
-.jasmine_html-reporter.jasmine-spec-list .jasmine-bar.jasmine-menu.jasmine-failure-list,
-.jasmine_html-reporter.jasmine-spec-list .jasmine-results .jasmine-failures {
+.jasmine_html-reporter.jasmine-spec-list .jasmine-results .jasmine-failures,
+.jasmine_html-reporter.jasmine-spec-list .jasmine-performance-view {
   display: none;
 }
-.jasmine_html-reporter.jasmine-failure-list .jasmine-bar.jasmine-menu.jasmine-spec-list,
-.jasmine_html-reporter.jasmine-failure-list .jasmine-summary {
+.jasmine_html-reporter.jasmine-failure-list .jasmine-summary,
+.jasmine_html-reporter.jasmine-failure-list .jasmine-performance-view {
+  display: none;
+}
+.jasmine_html-reporter.jasmine-performance .jasmine-results .jasmine-failures,
+.jasmine_html-reporter.jasmine-performance .jasmine-summary {
   display: none;
 }
 .jasmine_html-reporter .jasmine-results {
@@ -211,6 +185,9 @@ body {
 .jasmine_html-reporter .jasmine-summary li.jasmine-pending a {
   color: #ba9d37;
 }
+.jasmine_html-reporter .jasmine-summary li.jasmine-notApplicable a {
+  color: #ba9d37;
+}
 .jasmine_html-reporter .jasmine-summary li.jasmine-excluded a {
   color: #bababa;
 }
@@ -224,10 +201,16 @@ body {
   content: "* ";
 }
 .jasmine_html-reporter .jasmine-specs li.jasmine-pending a:before {
-  content: "• ";
+  content: "* ";
+}
+.jasmine_html-reporter .jasmine-specs li.jasmine-notApplicable a:before {
+  content: "* ";
 }
 .jasmine_html-reporter .jasmine-specs li.jasmine-excluded a:before {
   content: "• ";
+}
+.jasmine_html-reporter .jasmine-specs li .jasmine-spec-duration {
+  margin-left: 1em;
 }
 .jasmine_html-reporter .jasmine-description + .jasmine-suite {
   margin-top: 0;
@@ -295,4 +278,26 @@ body {
 }
 .jasmine_html-reporter .jasmine-debug-log table, .jasmine_html-reporter .jasmine-debug-log th, .jasmine_html-reporter .jasmine-debug-log td {
   border: 1px solid #ddd;
+}
+.jasmine_html-reporter .jasmine-debug-log .jasmine-debug-log-msg {
+  white-space: pre;
+}
+
+.jasmine-hidden {
+  display: none;
+}
+
+.jasmine-tab + .jasmine-tab:before {
+  content: " | ";
+}
+
+.jasmine-performance-view h2, .jasmine-performance-view h3 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.jasmine-performance-view table {
+  border-spacing: 5px;
+}
+.jasmine-performance-view th, .jasmine-performance-view td {
+  text-align: left;
 }
