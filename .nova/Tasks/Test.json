@@ -2,7 +2,7 @@
   "actions" : {
     "run" : {
       "enabled" : true,
-      "script" : "open \"http:\/\/localhost:5757\/test\/SpecRunner.html\""
+      "script" : "open \"http:\/\/greystate-airmac.local:5757\/test\/SpecRunner.html\""
     }
   },
   "environment" : {
